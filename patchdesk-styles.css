@@ -388,7 +388,7 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 .related-section h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.3rem; margin: 0 0 18px; }
 
 /* ---------------- how we review ---------------- */
-.method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.method-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; }
 .method-card {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 22px 18px;
@@ -435,7 +435,6 @@ footer { border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 20
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .review-grid { grid-template-columns: repeat(2, 1fr); }
-  .method-grid { grid-template-columns: repeat(2, 1fr); }
   .cta-band { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
