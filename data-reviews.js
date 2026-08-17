@@ -1,6 +1,8 @@
 // The Patch Desk — Reviews data
 // Add a new review by adding one object here. Newest first.
 // score bars are 0-100. delta tone: "good" | "mid" | "bad"
+// To publish: copy reviews/_template.html to reviews/your-slug.html,
+// fill it in, then set that review's "live" to true and "slug" to match.
 
 const REVIEWS = [
   {

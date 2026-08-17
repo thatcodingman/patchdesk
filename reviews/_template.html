@@ -1,0 +1,160 @@
+<!--
+  THE PATCH DESK — REVIEW ARTICLE TEMPLATE
+  =========================================
+  How to publish a new review:
+  1. Copy this file to reviews/your-game-slug.html
+  2. Replace the placeholder title, meta, scores, and body copy
+  3. In ../data-reviews.js, set that review's "live" to true and "slug"
+     to match your filename (without .html)
+  4. Once you have a real Cusdis account, replace YOUR_CUSDIS_APP_ID below
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Title Goes Here — The Patch Desk</title>
+<meta name="description" content="Is Review Title Goes Here worth the price? Our honest verdict, compared to last year, with a real tally of what got added and cut.">
+<link rel="canonical" href="https://thepatchdesk.com/reviews/format-preview-1.html">
+<meta property="og:title" content="Review Title Goes Here — The Patch Desk">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="../patchdesk-styles.css">
+</head>
+<body>
+
+<div class="meme-ticker"><div class="track"></div></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../index.html" class="logo">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="8" width="20" height="10" rx="5" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M7 11v4M5 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="16" cy="12" r="1.1" fill="currentColor"/>
+          <circle cx="18.5" cy="14.5" r="1.1" fill="currentColor"/>
+        </svg>
+      </span>
+      The Patch Desk
+    </a>
+    <nav class="main-nav">
+      <a href="../index.html#reviews">Reviews</a>
+      <a href="../index.html#patch-watch">Patch Watch</a>
+      <a href="../patchdesk-about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../patchdesk-reviews.html">Reviews</a> / Review Title Goes Here</p>
+
+    <section class="article-header">
+      <span class="badge-live">REVIEW</span>
+      <h1 style="margin:0;">Review Title Goes Here</h1>
+      <div class="article-meta-line">
+        <span>Platform</span>
+        <span>Genre</span>
+        <span>Launch price: $XX</span>
+        <span>Reviewed [Month Year]</span>
+      </div>
+    </section>
+
+    <div class="scorecard" style="max-width:520px; margin-bottom:40px;">
+      <div class="scorecard-head">
+        <div>
+          <div class="game-title">Overall verdict</div>
+          <div class="plat">Based on the four questions below</div>
+        </div>
+        <div class="overall-score">X.X<span>/ 10</span></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label"><span>Worth the price</span><span class="val">Yes / No / Sort of</span></div>
+        <div class="meter"><div class="meter-fill good" style="width:80%"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label"><span>vs. last year</span><span class="val">+X%</span></div>
+        <div class="meter"><div class="meter-fill good" style="width:60%"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label"><span>Features added vs. cut</span><span class="val">X / X</span></div>
+        <div class="meter"><div class="meter-fill mid" style="width:70%"></div></div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-label"><span>Performance / bugs</span><span class="val">Smooth / Rough</span></div>
+        <div class="meter"><div class="meter-fill good" style="width:75%"></div></div>
+      </div>
+    </div>
+
+    <div class="video-slot">
+      <div class="icon">▶</div>
+      <div>
+        <h4>Video breakdown coming soon</h4>
+        <p>If you'd rather watch this one than read it, we're working on it — the vlog version drops here as soon as it's ready. Check back, or follow along so you don't miss it.</p>
+      </div>
+    </div>
+
+    <article class="article-body">
+      <h2>Worth the price?</h2>
+      <p>[Write the honest take here — does the launch price match what you actually get? Be specific about what you're paying for.]</p>
+
+      <h2>How it compares to last year</h2>
+      <p>[For sequels/annual releases: what's genuinely different, and what's just a reskin? Reference specifics from the previous version.]</p>
+
+      <h2>What got added, what got cut</h2>
+      <div class="feature-columns">
+        <div class="feature-col added">
+          <h4>▲ Added</h4>
+          <ul>
+            <li>[Feature]</li>
+            <li>[Feature]</li>
+            <li>[Feature]</li>
+          </ul>
+        </div>
+        <div class="feature-col cut">
+          <h4>▼ Cut</h4>
+          <ul>
+            <li>[Feature]</li>
+            <li>[Feature]</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Performance & bugs</h2>
+      <p>[How does it actually run, hours in — not on launch trailer footage. Note platform-specific issues if relevant.]</p>
+
+      <div class="verdict-box">
+        <h3>The verdict</h3>
+        <p>[Two or three sentences — the bottom line someone skimming the page should walk away with.]</p>
+      </div>
+    </article>
+
+    <section class="comment-section">
+      <h2>What do you think?</h2>
+      <p class="sub">Disagree with the verdict? Say so — no account needed.</p>
+      <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="YOUR_CUSDIS_APP_ID"
+        data-page-id="format-preview-1"
+        data-page-url="https://thepatchdesk.com/reviews/format-preview-1.html"
+        data-page-title="Review Title Goes Here">
+      </div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <p class="foot-disclosure">The Patch Desk publishes independent game reviews. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
+    <nav class="foot-links">
+      <a href="../index.html#reviews">Reviews</a>
+      <a href="../index.html#patch-watch">Patch Watch</a>
+      <a href="../patchdesk-about.html">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="../patchdesk-app.js"></script>
+</body>
+</html>
