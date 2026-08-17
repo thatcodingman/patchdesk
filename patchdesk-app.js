@@ -28,7 +28,46 @@ function initTicker() {
 document.addEventListener('DOMContentLoaded', () => {
   initTicker();
   initNotifyForms();
+  initPollWidgets();
 });
+
+/* ---- one-click frequency poll (Netlify Forms, no reload, no fake tallies) ---- */
+function initPollWidgets() {
+  document.querySelectorAll('.poll-card').forEach(card => {
+    const options = card.querySelectorAll('.poll-option');
+    const form = card.querySelector('.poll-form');
+    const success = card.querySelector('.poll-success');
+    if (!form) return;
+
+    options.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (card.classList.contains('voted')) return;
+        card.classList.add('voted');
+        options.forEach(o => o.disabled = true);
+        btn.classList.add('selected');
+
+        form.querySelector('[name="choice"]').value = btn.getAttribute('data-value');
+        const body = new URLSearchParams(new FormData(form)).toString();
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body
+        })
+          .then(() => {
+            card.querySelector('.poll-options').style.display = 'none';
+            if (success) success.style.display = 'block';
+          })
+          .catch(() => {
+            card.classList.remove('voted');
+            options.forEach(o => o.disabled = false);
+            btn.classList.remove('selected');
+            alert('Something went wrong — mind trying again?');
+          });
+      });
+    });
+  });
+}
 
 /* ---- "notify me when video drops" signup (Netlify Forms, no reload) ---- */
 function initNotifyForms() {

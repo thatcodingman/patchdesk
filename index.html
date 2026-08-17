@@ -165,6 +165,22 @@
           <p class="notify-success">✓ You're on the list — we'll email you the second the first video drops.</p>
           <p class="notify-note">One email, when it's actually ready. No spam in between.</p>
         </div>
+
+        <div class="poll-card" id="frequency-poll">
+          <h4>How often should we drop?</h4>
+          <p class="poll-sub">Pick one — helps us plan the upload schedule.</p>
+          <div class="poll-options">
+            <button class="poll-option" data-value="Daily">Daily</button>
+            <button class="poll-option" data-value="3x a week">3x a week</button>
+            <button class="poll-option" data-value="Once a week">Once a week</button>
+            <button class="poll-option" data-value="Biweekly">Biweekly</button>
+          </div>
+          <p class="poll-success">✓ Thanks — vote logged.</p>
+          <form name="patchdesk-frequency-poll" method="POST" data-netlify="true" class="poll-form" style="display:none;">
+            <input type="hidden" name="form-name" value="patchdesk-frequency-poll">
+            <input type="hidden" name="choice">
+          </form>
+        </div>
       </div>
     </div>
   </section>

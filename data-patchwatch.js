@@ -1,6 +1,8 @@
 // The Patch Desk — Patch Watch data
 // Add a new check-in by adding one object here.
-// delta: "up" | "down" | "flat"
+// delta: "up" | "down" | "flat"  — YOUR editorial verdict on the patch
+// sentiment: 0-100 — COMMUNITY reaction, kept separate from your own delta
+// requested: "yes" | "no" | "mixed" — was this asked for by players?
 // date: ISO string "YYYY-MM-DD" — needed once "live" is true (for sorting + RSS pubDate)
 
 const PATCH_WATCH = [
@@ -12,7 +14,10 @@ const PATCH_WATCH = [
     date: null,
     blurb: "Short verdict on what this patch actually changed, in plain language — not the marketing patch notes.",
     delta: "up",
-    deltaLabel: "Improved since launch"
+    deltaLabel: "Improved since launch",
+    sentiment: 74,
+    requested: "yes",
+    patchSize: "4.2 GB (PS5) / 3.8 GB (PC)"
   },
   {
     slug: "format-preview-2",
@@ -22,7 +27,10 @@ const PATCH_WATCH = [
     date: null,
     blurb: "New content dropped, but so did something players relied on. Here's the honest trade-off.",
     delta: "flat",
-    deltaLabel: "Mixed bag"
+    deltaLabel: "Mixed bag",
+    sentiment: 51,
+    requested: "mixed",
+    patchSize: "6.1 GB (all platforms)"
   },
   {
     slug: "format-preview-3",
@@ -32,7 +40,10 @@ const PATCH_WATCH = [
     date: null,
     blurb: "What got nerfed, what got buffed, and whether the game is actually more fun to play right now.",
     delta: "down",
-    deltaLabel: "Slipped since launch"
+    deltaLabel: "Slipped since launch",
+    sentiment: 32,
+    requested: "no",
+    patchSize: "1.8 GB (all platforms)"
   }
 ];
 

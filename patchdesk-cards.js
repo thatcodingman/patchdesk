@@ -77,12 +77,14 @@ function sortItems(kind, mode) {
 }
 
 /**
- * Renders up to `count` other reviews (excluding currentSlug) into a
+ * Renders up to `count` other entries (excluding currentSlug) into a
  * container — used at the bottom of an article page.
+ * kind: "reviews" | "patchwatch"
  */
-function renderRelated(containerSelector, currentSlug, count = 3) {
-  const others = REVIEWS.filter(r => r.slug !== currentSlug).slice(0, count);
-  renderList("reviews", containerSelector, others);
+function renderRelated(kind, containerSelector, currentSlug, count = 3) {
+  const data = kind === "reviews" ? REVIEWS : PATCH_WATCH;
+  const others = data.filter(item => item.slug !== currentSlug).slice(0, count);
+  renderList(kind, containerSelector, others);
 }
 
 /**

@@ -297,6 +297,20 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 .verdict-box h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; margin: 0 0 8px; }
 .verdict-box p { margin: 0; color: var(--text-soft); }
 
+.requested-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--font-body); font-weight: 700; font-size: 0.85rem;
+  padding: 6px 14px; border-radius: 20px; margin-top: 6px;
+}
+.requested-badge.yes { color: var(--good); background: rgba(53,224,160,0.12); }
+.requested-badge.mixed { color: var(--mid); background: rgba(242,177,52,0.12); }
+.requested-badge.no { color: var(--text-soft); background: var(--surface-raised); border: 1px solid var(--line-strong); }
+
+.delta-big { font-family: var(--font-display); font-size: 1.8rem; line-height: 1; }
+.delta-big.up { color: var(--good); }
+.delta-big.down { color: var(--bad); }
+.delta-big.flat { color: var(--mid); }
+
 .comment-section { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
 .comment-section h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; margin: 0 0 6px; }
 .comment-section .sub { color: var(--text-soft); font-size: 0.88rem; margin: 0 0 20px; }
@@ -386,10 +400,28 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 /* ---------------- newsletter / cta ---------------- */
 .cta-band {
   background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius);
-  padding: 36px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+  padding: 36px; display: grid; grid-template-columns: 1.25fr 1fr; gap: 36px; align-items: start;
 }
 .cta-band h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; margin: 0 0 6px; }
 .cta-band p { color: var(--text-soft); margin: 0; max-width: 42ch; }
+
+/* ---------------- frequency poll ---------------- */
+.poll-card {
+  background: var(--surface-raised); border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 22px;
+}
+.poll-card h4 { font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; margin: 0 0 4px; }
+.poll-card .poll-sub { font-size: 0.82rem; color: var(--text-soft); margin: 0 0 16px; }
+.poll-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.poll-option {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.82rem;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line-strong);
+  border-radius: var(--radius); padding: 10px 8px; cursor: pointer; text-align: center;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.poll-option:hover { border-color: var(--brand); color: var(--brand); }
+.poll-option.selected { background: var(--brand); color: #0d0f14; border-color: var(--brand); }
+.poll-success { color: var(--good); font-size: 0.85rem; font-weight: 600; display: none; margin: 0; }
 
 /* ---------------- footer ---------------- */
 footer { border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 20px; }
@@ -404,6 +436,7 @@ footer { border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 20
   .hero-grid { grid-template-columns: 1fr; }
   .review-grid { grid-template-columns: repeat(2, 1fr); }
   .method-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-band { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .review-grid { grid-template-columns: 1fr; }
