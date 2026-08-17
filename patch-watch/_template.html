@@ -9,11 +9,14 @@
   How to publish a new check-in:
   1. Copy this file to patch-watch/your-slug.html
   2. Replace the placeholder title, meta, badges, and body copy
-  3. In ../data-patchwatch.js, set that entry's "live" to true, "slug"
+  3. Get a real quote from someone who actually plays this game — DM
+     a knowledgeable player, ask 2-3 specific questions, attribute it
+     honestly (don't paraphrase their words into your own voice)
+  4. In ../data-patchwatch.js, set that entry's "live" to true, "slug"
      to match your filename (without .html), and "date" to today
-  4. Update the renderRelated(...) slug near the bottom of this file
+  5. Update the renderRelated(...) slug near the bottom of this file
      to match your own slug
-  5. Cusdis App ID is already set below — no need to touch it again
+  6. Cusdis App ID is already set below — no need to touch it again
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -126,6 +129,16 @@
 
       <h2>Was this actually asked for?</h2>
       <p>[This is where the community-research goes — what were players actually asking for on Reddit, Discord, forums, etc. before this dropped? Link sources where you can. Be honest if the answer is "no one asked for this."]</p>
+
+      <div class="community-quote">
+        <span class="mark">"</span>
+        <blockquote>[Direct quote from a real player with actual game knowledge — get 2-3 specific answers over DM, don't paraphrase into your own voice. This should sound like them, not you.]</blockquote>
+        <div class="attribution">
+          <span class="name">[Name or handle]</span>
+          <span class="role">— [rank/role in the community]</span>
+          <a href="#" target="_blank" rel="noopener">[Source link, if public]</a>
+        </div>
+      </div>
 
       <h2>File size & rollout</h2>
       <p>[Download size per platform, install time if notable, and any platform-specific rollout issues — server downtime, patch bugs on a specific console, etc.]</p>

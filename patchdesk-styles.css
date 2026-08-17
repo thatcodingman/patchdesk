@@ -311,6 +311,26 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 .delta-big.down { color: var(--bad); }
 .delta-big.flat { color: var(--mid); }
 
+/* ---------------- community take (credited quote) ---------------- */
+.community-quote {
+  background: var(--surface); border: 1px solid var(--line-strong); border-left: 3px solid var(--brand);
+  border-radius: var(--radius); padding: 26px 28px; margin: 8px 0 24px; position: relative;
+}
+.community-quote .mark {
+  font-family: var(--font-display); font-size: 2.6rem; line-height: 0.5; color: var(--brand-dim);
+  display: block; margin-bottom: 6px;
+}
+.community-quote blockquote {
+  margin: 0 0 16px; padding: 0; font-size: 1.02rem; color: var(--text); font-style: italic; line-height: 1.6;
+}
+.community-quote .attribution {
+  display: flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 0.85rem;
+}
+.community-quote .attribution .name { font-weight: 700; color: var(--text); font-style: normal; }
+.community-quote .attribution .role { color: var(--text-soft); }
+.community-quote .attribution a { color: var(--brand); text-decoration: none; }
+.community-quote .attribution a:hover { text-decoration: underline; }
+
 .comment-section { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
 .comment-section h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.4rem; margin: 0 0 6px; }
 .comment-section .sub { color: var(--text-soft); font-size: 0.88rem; margin: 0 0 20px; }
