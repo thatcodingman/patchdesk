@@ -350,6 +350,24 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 }
 .contact-info a { color: var(--brand); }
 
+.reason-select { display: flex; flex-wrap: wrap; gap: 8px; }
+.reason-chip {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.82rem;
+  background: var(--surface); color: var(--text); border: 1px solid var(--line-strong);
+  border-radius: 20px; padding: 8px 14px; cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.reason-chip:hover { border-color: var(--brand); color: var(--brand); }
+.reason-chip.selected { background: var(--brand); color: #0d0f14; border-color: var(--brand); }
+
+.contact-success {
+  display: none; max-width: 480px;
+  background: var(--surface); border: 1px solid var(--good); border-left: 3px solid var(--good);
+  border-radius: var(--radius); padding: 22px 24px; margin-bottom: 20px;
+}
+.contact-success h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; color: var(--good); margin: 0 0 6px; }
+.contact-success p { color: var(--text-soft); margin: 0; }
+
 /* ---------------- sort bar (archive pages) ---------------- */
 .sort-bar {
   display: flex; gap: 8px; margin: 4px 0 28px; flex-wrap: wrap;
@@ -421,7 +439,14 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 }
 .poll-option:hover { border-color: var(--brand); color: var(--brand); }
 .poll-option.selected { background: var(--brand); color: #0d0f14; border-color: var(--brand); }
-.poll-success { color: var(--good); font-size: 0.85rem; font-weight: 600; display: none; margin: 0; }
+.poll-submit {
+  font-family: var(--font-body); font-weight: 700; font-size: 0.85rem;
+  background: var(--brand); color: #0d0f14; border: none; width: 100%;
+  border-radius: var(--radius); padding: 11px 16px; cursor: pointer; margin-top: 12px;
+}
+.poll-submit:disabled { background: var(--line-strong); color: var(--text-soft); cursor: not-allowed; }
+.poll-submit:not(:disabled):hover { background: #869eff; }
+.poll-success { color: var(--good); font-size: 0.85rem; font-weight: 600; display: none; margin: 12px 0 0; }
 
 /* ---------------- footer ---------------- */
 footer { border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 20px; }

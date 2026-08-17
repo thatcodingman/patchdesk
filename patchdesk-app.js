@@ -29,58 +29,68 @@ document.addEventListener('DOMContentLoaded', () => {
   initTicker();
   initNotifyForms();
   initPollWidgets();
+  initChipSelect('#reason-select', '#reason-hidden', 'reason-chip');
+  initContactForm();
 });
 
-/* ---- one-click frequency poll (Netlify Forms, no reload, no fake tallies) ---- */
+/* ---- shared Netlify Forms AJAX submit (no page reload, no default Netlify page) ---- */
+function submitFormAjax(form) {
+  const body = new URLSearchParams(new FormData(form)).toString();
+  return fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body
+  });
+}
+
+/* ---- frequency poll: pick an option, then confirm with Submit vote ---- */
 function initPollWidgets() {
   document.querySelectorAll('.poll-card').forEach(card => {
     const options = card.querySelectorAll('.poll-option');
+    const submitBtn = card.querySelector('.poll-submit');
     const form = card.querySelector('.poll-form');
     const success = card.querySelector('.poll-success');
-    if (!form) return;
+    if (!form || !submitBtn) return;
+    let chosen = null;
 
     options.forEach(btn => {
       btn.addEventListener('click', () => {
-        if (card.classList.contains('voted')) return;
-        card.classList.add('voted');
-        options.forEach(o => o.disabled = true);
+        options.forEach(o => o.classList.remove('selected'));
         btn.classList.add('selected');
-
-        form.querySelector('[name="choice"]').value = btn.getAttribute('data-value');
-        const body = new URLSearchParams(new FormData(form)).toString();
-
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body
-        })
-          .then(() => {
-            card.querySelector('.poll-options').style.display = 'none';
-            if (success) success.style.display = 'block';
-          })
-          .catch(() => {
-            card.classList.remove('voted');
-            options.forEach(o => o.disabled = false);
-            btn.classList.remove('selected');
-            alert('Something went wrong — mind trying again?');
-          });
+        chosen = btn.getAttribute('data-value');
+        submitBtn.disabled = false;
       });
+    });
+
+    submitBtn.addEventListener('click', () => {
+      if (!chosen || card.classList.contains('voted')) return;
+      card.classList.add('voted');
+      options.forEach(o => o.disabled = true);
+      submitBtn.disabled = true;
+      form.querySelector('[name="choice"]').value = chosen;
+
+      submitFormAjax(form)
+        .then(() => {
+          card.querySelector('.poll-options').style.display = 'none';
+          submitBtn.style.display = 'none';
+          if (success) success.style.display = 'block';
+        })
+        .catch(() => {
+          card.classList.remove('voted');
+          options.forEach(o => o.disabled = false);
+          submitBtn.disabled = false;
+          alert('Something went wrong — mind trying again?');
+        });
     });
   });
 }
 
-/* ---- "notify me when video drops" signup (Netlify Forms, no reload) ---- */
+/* ---- "notify me when video drops" signup ---- */
 function initNotifyForms() {
   document.querySelectorAll('form.notify-form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const body = new URLSearchParams(new FormData(form)).toString();
-
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body
-      })
+      submitFormAjax(form)
         .then(() => {
           form.style.display = 'none';
           const success = form.nextElementSibling;
@@ -92,5 +102,40 @@ function initNotifyForms() {
           alert('Something went wrong — mind trying again?');
         });
     });
+  });
+}
+
+/* ---- contact page: chip-based "Reason" picker (no native <select> popup) ---- */
+function initChipSelect(containerSelector, hiddenInputSelector, chipClass) {
+  const container = document.querySelector(containerSelector);
+  const hidden = document.querySelector(hiddenInputSelector);
+  if (!container || !hidden) return;
+  const chips = container.querySelectorAll('.' + chipClass);
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      hidden.value = chip.getAttribute('data-value');
+    });
+  });
+}
+
+/* ---- contact form: AJAX submit + on-brand success message ---- */
+function initContactForm() {
+  const form = document.querySelector('#contact-form');
+  if (!form) return;
+  const success = document.querySelector('#contact-success');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitFormAjax(form)
+      .then(() => {
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      })
+      .catch(() => {
+        alert('Something went wrong — mind trying again?');
+      });
   });
 }

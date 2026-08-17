@@ -49,7 +49,7 @@
 
   <section class="content">
     <div class="wrap">
-      <form class="contact-form" name="patchdesk-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <form class="contact-form" id="contact-form" name="patchdesk-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="patchdesk-contact">
         <p style="display:none;">
           <label>Don't fill this out if you're human: <input name="bot-field"></label>
@@ -66,13 +66,14 @@
         </div>
 
         <div class="form-row">
-          <label for="reason">Reason</label>
-          <select id="reason" name="reason">
-            <option>Game suggestion</option>
-            <option>Correction on a review</option>
-            <option>Press / business</option>
-            <option>Other</option>
-          </select>
+          <label>Reason</label>
+          <div class="reason-select" id="reason-select">
+            <button type="button" class="reason-chip selected" data-value="Game suggestion">Game suggestion</button>
+            <button type="button" class="reason-chip" data-value="Correction on a review">Correction</button>
+            <button type="button" class="reason-chip" data-value="Press / business">Press / business</button>
+            <button type="button" class="reason-chip" data-value="Other">Other</button>
+          </div>
+          <input type="hidden" name="reason" id="reason-hidden" value="Game suggestion">
         </div>
 
         <div class="form-row">
@@ -82,6 +83,11 @@
 
         <button type="submit" class="btn btn-primary">Send message</button>
       </form>
+
+      <div class="contact-success" id="contact-success">
+        <h3>✓ Message sent</h3>
+        <p>Thanks — we'll get back to you soon.</p>
+      </div>
 
       <p class="contact-info">Prefer email? Reach us directly at <a href="mailto:hello@thepatchdesk.com">hello@thepatchdesk.com</a>.</p>
     </div>
