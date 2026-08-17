@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patch Watch Archive — The Patch Desk</title>
-<meta name="description" content="Every ongoing game update check-in from The Patch Desk, newest first.">
-<link rel="canonical" href="https://thepatchdesk.com/patchdesk-patchwatch.html">
+<title>Contact — The Patch Desk</title>
+<meta name="description" content="Get in touch with The Patch Desk — game suggestions, corrections, or press.">
+<link rel="canonical" href="https://thepatchdesk.com/patchdesk-contact.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -32,7 +32,6 @@
     <nav class="main-nav">
       <a href="index.html#reviews">Reviews</a>
       <a href="index.html#patch-watch">Patch Watch</a>
-      <a href="index.html#how-we-review">How We Review</a>
       <a href="patchdesk-about.html">About</a>
     </nav>
   </div>
@@ -41,15 +40,49 @@
 <main>
   <section class="hero" style="padding-bottom: 20px;">
     <div class="wrap">
-      <p class="eyebrow">Patch Watch archive</p>
-      <h1>Every check-in, newest first</h1>
-      <p class="hero-sub">Tracking whether the games we've reviewed actually got better over time.</p>
+      <p class="eyebrow">Contact</p>
+      <h1>Got a game we should cover?</h1>
+      <p class="hero-sub">Suggestions, corrections, or press — this goes straight to the desk.</p>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 20px;">
+  <section class="content">
     <div class="wrap">
-      <div class="review-grid" id="patchwatch-full"></div>
+      <form class="contact-form" name="patchdesk-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="patchdesk-contact">
+        <p style="display:none;">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="reason">Reason</label>
+          <select id="reason" name="reason">
+            <option>Game suggestion</option>
+            <option>Correction on a review</option>
+            <option>Press / business</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send message</button>
+      </form>
+
+      <p class="contact-info">Prefer email? Reach us directly at <a href="mailto:hello@thepatchdesk.com">hello@thepatchdesk.com</a>.</p>
     </div>
   </section>
 </main>
@@ -59,18 +92,12 @@
     <p class="foot-disclosure">The Patch Desk publishes independent game reviews. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
     <nav class="foot-links">
       <a href="index.html#reviews">Reviews</a>
-      <a href="index.html#patch-watch">Patch Watch</a>
       <a href="patchdesk-about.html">About</a>
-      <a href="patchdesk-contact.html">Contact</a>
       <a href="patchdesk-terms.html">Terms</a>
       <a href="patchdesk-privacy.html">Privacy</a>
     </nav>
   </div>
 </footer>
 
-<script src="data-patchwatch.js"></script>
-<script src="patchdesk-cards.js"></script>
-<script src="patchdesk-app.js"></script>
-<script>renderCards("patchwatch", "#patchwatch-full");</script>
 </body>
 </html>
