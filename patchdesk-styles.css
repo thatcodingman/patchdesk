@@ -336,6 +336,19 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 }
 .contact-info a { color: var(--brand); }
 
+/* ---------------- sort bar (archive pages) ---------------- */
+.sort-bar {
+  display: flex; gap: 8px; margin: 4px 0 28px; flex-wrap: wrap;
+}
+.sort-bar button {
+  font-family: var(--font-body); font-weight: 600; font-size: 0.82rem;
+  background: var(--surface); color: var(--text-soft);
+  border: 1px solid var(--line-strong); border-radius: 20px;
+  padding: 8px 16px; cursor: pointer; transition: border-color 0.15s ease, color 0.15s ease;
+}
+.sort-bar button:hover { color: var(--text); border-color: var(--brand-dim); }
+.sort-bar button.active { color: var(--bg); background: var(--brand); border-color: var(--brand); }
+
 /* ---------------- how we review ---------------- */
 .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .method-card {

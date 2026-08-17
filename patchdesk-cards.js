@@ -1,7 +1,7 @@
 // The Patch Desk — card renderer
 // Reads REVIEWS / PATCH_WATCH (loaded via <script> before this file)
 // and builds the card HTML. One source of truth, used by the homepage
-// previews and the full archive pages.
+// previews and the full archive pages (which add sorting on top).
 
 function reviewCardHTML(r) {
   const href = r.live ? `reviews/${r.slug}.html` : "#";
@@ -36,18 +36,58 @@ function updateCardHTML(u) {
     </a>`;
 }
 
+function renderList(kind, containerSelector, items) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+  const html = items.map(kind === "reviews" ? reviewCardHTML : updateCardHTML).join("");
+  container.innerHTML = html || `<p style="color:var(--text-soft); grid-column: 1/-1;">Nothing here yet.</p>`;
+}
+
 /**
- * Renders cards into a container.
+ * Renders cards into a container, in the data file's original order.
  * kind: "reviews" | "patchwatch"
  * limit: number of cards to show, or null for all
  */
 function renderCards(kind, containerSelector, limit = null) {
-  const container = document.querySelector(containerSelector);
-  if (!container) return;
-
   const data = kind === "reviews" ? REVIEWS : PATCH_WATCH;
   const items = limit ? data.slice(0, limit) : data;
-  const html = items.map(kind === "reviews" ? reviewCardHTML : updateCardHTML).join("");
+  renderList(kind, containerSelector, items);
+}
 
-  container.innerHTML = html || `<p style="color:var(--text-soft); grid-column: 1/-1;">Nothing here yet.</p>`;
+/* ---------------- sorting (archive pages) ---------------- */
+
+const DELTA_RANK = { up: 2, flat: 1, down: 0 };
+
+function sortItems(kind, mode) {
+  const data = (kind === "reviews" ? REVIEWS : PATCH_WATCH).slice();
+
+  if (mode === "newest") {
+    return data.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  }
+  if (mode === "score" && kind === "reviews") {
+    return data.sort((a, b) => b.score - a.score);
+  }
+  if (mode === "improved" && kind === "patchwatch") {
+    return data.sort((a, b) => DELTA_RANK[b.delta] - DELTA_RANK[a.delta]);
+  }
+  return data;
+}
+
+/**
+ * Wires up a .sort-bar's buttons to re-render a container on click.
+ * kind: "reviews" | "patchwatch"
+ */
+function initSortBar(kind, barSelector, containerSelector) {
+  const bar = document.querySelector(barSelector);
+  if (!bar) return;
+  const buttons = bar.querySelectorAll("[data-sort]");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const mode = btn.getAttribute("data-sort");
+      renderList(kind, containerSelector, sortItems(kind, mode));
+    });
+  });
 }

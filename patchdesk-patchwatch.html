@@ -10,6 +10,7 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:image" content="https://thepatchdesk.com/patchdesk-og.png">
+<link rel="alternate" type="application/rss+xml" title="The Patch Desk" href="feed.xml">
 <link rel="stylesheet" href="patchdesk-styles.css">
 </head>
 <body>
@@ -49,6 +50,10 @@
 
   <section class="section" style="padding-top: 20px;">
     <div class="wrap">
+      <div class="sort-bar" id="patchwatch-sort">
+        <button data-sort="newest" class="active">Newest</button>
+        <button data-sort="improved">Most improved</button>
+      </div>
       <div class="review-grid" id="patchwatch-full"></div>
     </div>
   </section>
@@ -64,6 +69,7 @@
       <a href="patchdesk-contact.html">Contact</a>
       <a href="patchdesk-terms.html">Terms</a>
       <a href="patchdesk-privacy.html">Privacy</a>
+      <a href="feed.xml">RSS</a>
     </nav>
   </div>
 </footer>
@@ -71,6 +77,9 @@
 <script src="data-patchwatch.js"></script>
 <script src="patchdesk-cards.js"></script>
 <script src="patchdesk-app.js"></script>
-<script>renderCards("patchwatch", "#patchwatch-full");</script>
+<script>
+  renderCards("patchwatch", "#patchwatch-full");
+  initSortBar("patchwatch", "#patchwatch-sort", "#patchwatch-full");
+</script>
 </body>
 </html>
