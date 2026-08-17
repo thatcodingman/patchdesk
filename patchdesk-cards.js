@@ -64,6 +64,9 @@ function sortItems(kind, mode) {
   if (mode === "newest") {
     return data.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
   }
+  if (mode === "oldest") {
+    return data.sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+  }
   if (mode === "score" && kind === "reviews") {
     return data.sort((a, b) => b.score - a.score);
   }
@@ -71,6 +74,15 @@ function sortItems(kind, mode) {
     return data.sort((a, b) => DELTA_RANK[b.delta] - DELTA_RANK[a.delta]);
   }
   return data;
+}
+
+/**
+ * Renders up to `count` other reviews (excluding currentSlug) into a
+ * container — used at the bottom of an article page.
+ */
+function renderRelated(containerSelector, currentSlug, count = 3) {
+  const others = REVIEWS.filter(r => r.slug !== currentSlug).slice(0, count);
+  renderList("reviews", containerSelector, others);
 }
 
 /**

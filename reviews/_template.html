@@ -4,9 +4,11 @@
   How to publish a new review:
   1. Copy this file to reviews/your-game-slug.html
   2. Replace the placeholder title, meta, scores, and body copy
-  3. In ../data-reviews.js, set that review's "live" to true and "slug"
-     to match your filename (without .html)
-  4. Once you have a real Cusdis account, replace YOUR_CUSDIS_APP_ID below
+  3. In ../data-reviews.js, set that review's "live" to true, "slug"
+     to match your filename (without .html), and "date" to today
+  4. Update the renderRelated(...) slug near the bottom of this file
+     to match your own slug (so it doesn't try to exclude itself wrong)
+  5. Once you have a real Cusdis account, replace YOUR_CUSDIS_APP_ID below
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -92,9 +94,16 @@
 
     <div class="video-slot">
       <div class="icon">▶</div>
-      <div>
+      <div style="flex:1;">
         <h4>Video breakdown coming soon</h4>
-        <p>If you'd rather watch this one than read it, we're working on it — the vlog version drops here as soon as it's ready. Check back, or follow along so you don't miss it.</p>
+        <p>If you'd rather watch this one than read it, we're working on it — the vlog version drops here as soon as it's ready. Check back, or drop your email and we'll tell you the second it's live.</p>
+        <form class="notify-form" name="patchdesk-video-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field-video">
+          <input type="hidden" name="form-name" value="patchdesk-video-notify">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field-video"></label></p>
+          <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+          <button type="submit">Notify me</button>
+        </form>
+        <p class="notify-success">✓ You're on the list — we'll email you the second the first video drops.</p>
       </div>
     </div>
 
@@ -133,6 +142,11 @@
       </div>
     </article>
 
+    <section class="related-section">
+      <h2>More reviews</h2>
+      <div class="review-grid" id="related-reviews"></div>
+    </section>
+
     <section class="comment-section">
       <h2>What do you think?</h2>
       <p class="sub">Disagree with the verdict? Say so — no account needed.</p>
@@ -159,6 +173,13 @@
   </div>
 </footer>
 
+<script src="../data-reviews.js"></script>
+<script src="../patchdesk-cards.js"></script>
 <script src="../patchdesk-app.js"></script>
+<script>
+  // IMPORTANT: update "format-preview-1" to this article's own slug
+  // when you duplicate this template for a real review.
+  renderRelated("#related-reviews", "format-preview-1", 3);
+</script>
 </body>
 </html>

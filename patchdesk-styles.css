@@ -349,6 +349,30 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 .sort-bar button:hover { color: var(--text); border-color: var(--brand-dim); }
 .sort-bar button.active { color: var(--bg); background: var(--brand); border-color: var(--brand); }
 
+/* ---------------- notify signup ---------------- */
+.notify-form {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px;
+}
+.notify-form input[type="email"] {
+  font-family: var(--font-body); font-size: 0.92rem;
+  background: var(--bg); color: var(--text);
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  padding: 11px 14px; flex: 1; min-width: 200px;
+}
+.notify-form input[type="email"]:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+.notify-form button {
+  font-family: var(--font-body); font-weight: 700; font-size: 0.88rem;
+  background: var(--brand); color: #0d0f14; border: none;
+  border-radius: var(--radius); padding: 11px 20px; cursor: pointer; white-space: nowrap;
+}
+.notify-form button:hover { background: #869eff; }
+.notify-note { font-size: 0.78rem; color: var(--text-soft); margin: 8px 0 0; }
+.notify-success { color: var(--good); font-size: 0.88rem; font-weight: 600; display: none; margin-top: 12px; }
+
+/* ---------------- related reviews ---------------- */
+.related-section { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--line); }
+.related-section h2 { font-family: var(--font-display); font-weight: 400; font-size: 1.3rem; margin: 0 0 18px; }
+
 /* ---------------- how we review ---------------- */
 .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .method-card {

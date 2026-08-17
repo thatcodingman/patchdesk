@@ -156,8 +156,15 @@
         <div>
           <h3>Videos are coming too</h3>
           <p>Written reviews are launching first — vlog-style video breakdowns are in production and will drop right alongside the written verdict.</p>
+          <form class="notify-form" name="patchdesk-video-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field-video">
+            <input type="hidden" name="form-name" value="patchdesk-video-notify">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field-video"></label></p>
+            <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+            <button type="submit">Notify me</button>
+          </form>
+          <p class="notify-success">✓ You're on the list — we'll email you the second the first video drops.</p>
+          <p class="notify-note">One email, when it's actually ready. No spam in between.</p>
         </div>
-        <a href="patchdesk-about.html" class="btn btn-primary">Read the pitch</a>
       </div>
     </div>
   </section>

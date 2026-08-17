@@ -25,4 +25,33 @@ function initTicker() {
   track.innerHTML = itemHTML.repeat(6);
 }
 
-document.addEventListener('DOMContentLoaded', initTicker);
+document.addEventListener('DOMContentLoaded', () => {
+  initTicker();
+  initNotifyForms();
+});
+
+/* ---- "notify me when video drops" signup (Netlify Forms, no reload) ---- */
+function initNotifyForms() {
+  document.querySelectorAll('form.notify-form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const body = new URLSearchParams(new FormData(form)).toString();
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body
+      })
+        .then(() => {
+          form.style.display = 'none';
+          const success = form.nextElementSibling;
+          if (success && success.classList.contains('notify-success')) {
+            success.style.display = 'block';
+          }
+        })
+        .catch(() => {
+          alert('Something went wrong — mind trying again?');
+        });
+    });
+  });
+}
