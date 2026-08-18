@@ -1,7 +1,8 @@
 // The Patch Desk — card renderer
-// Reads REVIEWS / PATCH_WATCH (loaded via <script> before this file)
-// and builds the card HTML. One source of truth, used by the homepage
-// previews and the full archive pages (which add sorting on top).
+// Reads REVIEWS / PATCH_WATCH / REVEALS (loaded via <script> before this
+// file) and builds the card HTML. One source of truth, used by the
+// homepage previews, the per-type archive pages, and the combined
+// "Everything" browse page.
 
 function reviewCardHTML(r) {
   const href = r.live ? `reviews/${r.slug}.html` : "#";
@@ -36,30 +37,50 @@ function updateCardHTML(u) {
     </a>`;
 }
 
+function revealCardHTML(v) {
+  const href = v.live ? `reveals/${v.slug}.html` : "#";
+  const badge = v.live ? "REVEAL" : "FORMAT PREVIEW";
+
+  return `
+    <a class="update-card" href="${href}" style="text-decoration:none; color:inherit; display:block;">
+      <span class="badge" style="background:var(--mid); color:var(--bg);">${badge}</span>
+      <h3>${v.title}</h3>
+      <div class="meta">${v.meta}</div>
+      <p class="blurb">${v.blurb}</p>
+    </a>`;
+}
+
+const KIND_CONFIG = {
+  reviews:    { data: () => REVIEWS,     render: reviewCardHTML },
+  patchwatch: { data: () => PATCH_WATCH, render: updateCardHTML },
+  reveals:    { data: () => REVEALS,     render: revealCardHTML }
+};
+
 function renderList(kind, containerSelector, items) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
-  const html = items.map(kind === "reviews" ? reviewCardHTML : updateCardHTML).join("");
+  const render = KIND_CONFIG[kind].render;
+  const html = items.map(render).join("");
   container.innerHTML = html || `<p style="color:var(--text-soft); grid-column: 1/-1;">Nothing here yet.</p>`;
 }
 
 /**
  * Renders cards into a container, in the data file's original order.
- * kind: "reviews" | "patchwatch"
+ * kind: "reviews" | "patchwatch" | "reveals"
  * limit: number of cards to show, or null for all
  */
 function renderCards(kind, containerSelector, limit = null) {
-  const data = kind === "reviews" ? REVIEWS : PATCH_WATCH;
+  const data = KIND_CONFIG[kind].data();
   const items = limit ? data.slice(0, limit) : data;
   renderList(kind, containerSelector, items);
 }
 
-/* ---------------- sorting (archive pages) ---------------- */
+/* ---------------- sorting (per-type archive pages) ---------------- */
 
 const DELTA_RANK = { up: 2, flat: 1, down: 0 };
 
 function sortItems(kind, mode) {
-  const data = (kind === "reviews" ? REVIEWS : PATCH_WATCH).slice();
+  const data = KIND_CONFIG[kind].data().slice();
 
   if (mode === "newest") {
     return data.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
@@ -79,17 +100,17 @@ function sortItems(kind, mode) {
 /**
  * Renders up to `count` other entries (excluding currentSlug) into a
  * container — used at the bottom of an article page.
- * kind: "reviews" | "patchwatch"
+ * kind: "reviews" | "patchwatch" | "reveals"
  */
 function renderRelated(kind, containerSelector, currentSlug, count = 3) {
-  const data = kind === "reviews" ? REVIEWS : PATCH_WATCH;
+  const data = KIND_CONFIG[kind].data();
   const others = data.filter(item => item.slug !== currentSlug).slice(0, count);
   renderList(kind, containerSelector, others);
 }
 
 /**
  * Wires up a .sort-bar's buttons to re-render a container on click.
- * kind: "reviews" | "patchwatch"
+ * kind: "reviews" | "patchwatch" | "reveals"
  */
 function initSortBar(kind, barSelector, containerSelector) {
   const bar = document.querySelector(barSelector);
@@ -102,6 +123,65 @@ function initSortBar(kind, barSelector, containerSelector) {
       btn.classList.add("active");
       const mode = btn.getAttribute("data-sort");
       renderList(kind, containerSelector, sortItems(kind, mode));
+    });
+  });
+}
+
+/* ---------------- combined "Everything" browse page ---------------- */
+
+function allContentItems(sortMode = "newest") {
+  const combined = [
+    ...REVIEWS.map(r => ({ ...r, _kind: "reviews" })),
+    ...PATCH_WATCH.map(u => ({ ...u, _kind: "patchwatch" })),
+    ...REVEALS.map(v => ({ ...v, _kind: "reveals" }))
+  ];
+  return combined.sort((a, b) =>
+    sortMode === "oldest"
+      ? (a.date || "").localeCompare(b.date || "")
+      : (b.date || "").localeCompare(a.date || "")
+  );
+}
+
+function renderAllContent(containerSelector, filterKind = "all", sortMode = "newest") {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+  let items = allContentItems(sortMode);
+  if (filterKind !== "all") items = items.filter(i => i._kind === filterKind);
+
+  const html = items.map(item => KIND_CONFIG[item._kind].render(item)).join("");
+  container.innerHTML = html || `<p style="color:var(--text-soft); grid-column: 1/-1;">Nothing here yet.</p>`;
+}
+
+/**
+ * Wires up filter chips + a sort bar together for the combined browse page.
+ */
+function initAllContentControls(filterBarSelector, sortBarSelector, containerSelector) {
+  const filterBar = document.querySelector(filterBarSelector);
+  const sortBar = document.querySelector(sortBarSelector);
+  if (!filterBar || !sortBar) return;
+
+  const filterButtons = filterBar.querySelectorAll("[data-filter]");
+  const sortButtons = sortBar.querySelectorAll("[data-sort]");
+
+  const rerender = () => {
+    const filterKind = filterBar.querySelector("[data-filter].active").getAttribute("data-filter");
+    const sortMode = sortBar.querySelector("[data-sort].active").getAttribute("data-sort");
+    renderAllContent(containerSelector, filterKind, sortMode);
+  };
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      rerender();
+    });
+  });
+
+  sortButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      sortButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      rerender();
     });
   });
 }

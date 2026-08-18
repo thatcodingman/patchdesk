@@ -1,29 +1,38 @@
 <!--
-  THE PATCH DESK — REVIEW ARTICLE TEMPLATE
-  =========================================
-  How to publish a new review:
-  1. Copy this file to reviews/your-game-slug.html
-  2. Replace the placeholder title, meta, scores, and body copy
-  3. In ../data-reviews.js, set that review's "live" to true, "slug"
+  THE PATCH DESK — PATCH WATCH ARTICLE TEMPLATE
+  ===============================================
+  This uses its OWN grading framework — not the Review rubric.
+  Patch Watch is about what changed since launch, whether the
+  community actually asked for it, and how players reacted —
+  not "worth the price" or launch-day performance.
+
+  How to publish a new check-in:
+  1. Copy this file to patch-watch/your-slug.html
+  2. Replace the placeholder title, meta, badges, and body copy
+  3. Get a real quote from someone who actually plays this game — DM
+     a knowledgeable player, ask 2-3 specific questions, attribute it
+     honestly (don't paraphrase their words into your own voice)
+  4. In ../data-patchwatch.js, set that entry's "live" to true, "slug"
      to match your filename (without .html), and "date" to today
-  4. Update the renderRelated(...) slug near the bottom of this file
-     to match your own slug (so it doesn't try to exclude itself wrong)
-  5. Cusdis App ID is already set below — no need to touch it again
+  5. Update the renderRelated(...) slug near the bottom of this file
+     to match your own slug
+  6. Cusdis App ID is already set below — no need to touch it again
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Review Title Goes Here — The Patch Desk</title>
-<meta name="description" content="Is Review Title Goes Here worth the price? Our honest verdict, compared to last year, with a real tally of what got added and cut.">
-<link rel="canonical" href="https://thepatchdesk.com/reviews/format-preview-1.html">
-<meta property="og:title" content="Review Title Goes Here — The Patch Desk">
+<title>Game Title — Patch Watch — The Patch Desk</title>
+<meta name="description" content="Checking back in on Game Title: what changed, whether players asked for it, and how the community actually reacted.">
+<link rel="canonical" href="https://thepatchdesk.com/patch-watch/format-preview-1.html">
+<meta property="og:title" content="Game Title — Patch Watch — The Patch Desk">
 <meta property="og:type" content="article">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:image" content="https://thepatchdesk.com/patchdesk-og.png">
+<link rel="alternate" type="application/rss+xml" title="The Patch Desk" href="../feed.xml">
 <link rel="stylesheet" href="../patchdesk-styles.css">
 </head>
 <body>
@@ -53,42 +62,33 @@
 
 <main>
   <div class="wrap">
-    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../patchdesk-reviews.html">Reviews</a> / Review Title Goes Here</p>
+    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../patchdesk-patchwatch.html">Patch Watch</a> / Game Title</p>
 
     <section class="article-header">
-      <span class="badge-live">REVIEW</span>
-      <h1 style="margin:0;">Review Title Goes Here</h1>
+      <span class="badge-live" style="background:var(--brand); color:#0d0f14;">PATCH WATCH</span>
+      <h1 style="margin:0;">Game Title — v2.4 Update</h1>
       <div class="article-meta-line">
         <span>Platform</span>
-        <span>Genre</span>
-        <span>Launch price: $XX</span>
-        <span>Reviewed [Month Year]</span>
+        <span>Checked in 8 months post-launch</span>
+        <span>Patch size: 4.2 GB (PS5) / 3.8 GB (PC)</span>
       </div>
     </section>
 
     <div class="scorecard" style="max-width:520px; margin-bottom:40px;">
       <div class="scorecard-head">
         <div>
-          <div class="game-title">Overall verdict</div>
-          <div class="plat">Based on the four questions below</div>
+          <div class="game-title">Our verdict</div>
+          <div class="plat">Editorial call, separate from community reaction below</div>
         </div>
-        <div class="overall-score">X.X<span>/ 10</span></div>
+        <div class="delta-big up">▲ Better</div>
       </div>
       <div class="stat-row">
-        <div class="stat-label"><span>Worth the price</span><span class="val">Yes / No / Sort of</span></div>
-        <div class="meter"><div class="meter-fill good" style="width:80%"></div></div>
+        <div class="stat-label"><span>Community sentiment</span><span class="val">74 / 100</span></div>
+        <div class="meter"><div class="meter-fill good" style="width:74%"></div></div>
       </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>vs. last year</span><span class="val">+X%</span></div>
-        <div class="meter"><div class="meter-fill good" style="width:60%"></div></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>Features added vs. cut</span><span class="val">X / X</span></div>
-        <div class="meter"><div class="meter-fill mid" style="width:70%"></div></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>Performance / bugs</span><span class="val">Smooth / Rough</span></div>
-        <div class="meter"><div class="meter-fill good" style="width:75%"></div></div>
+      <div class="stat-row" style="margin-top:16px;">
+        <div class="stat-label"><span>Was this requested?</span></div>
+        <span class="requested-badge yes">✓ Yes — fan requested</span>
       </div>
     </div>
 
@@ -96,7 +96,7 @@
       <div class="icon">▶</div>
       <div style="flex:1;">
         <h4>Video breakdown coming soon</h4>
-        <p>If you'd rather watch this one than read it, we're working on it — the vlog version drops here as soon as it's ready. Check back, or drop your email and we'll tell you the second it's live.</p>
+        <p>Short vlog-style check-ins are planned for Patch Watch too, once the format's up and running. Drop your email and we'll tell you the second it's live.</p>
         <form class="notify-form" name="patchdesk-video-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field-video">
           <input type="hidden" name="form-name" value="patchdesk-video-notify">
           <p style="display:none;"><label>Don't fill this out: <input name="bot-field-video"></label></p>
@@ -108,54 +108,64 @@
     </div>
 
     <article class="article-body">
-      <h2>Worth the price?</h2>
-      <p>[Write the honest take here — does the launch price match what you actually get? Be specific about what you're paying for.]</p>
-
-      <h2>How it compares to last year</h2>
-      <p>[For sequels/annual releases: what's genuinely different, and what's just a reskin? Reference specifics from the previous version.]</p>
-
-      <h2>What got added, what got cut</h2>
+      <h2>What changed</h2>
       <div class="feature-columns">
         <div class="feature-col added">
-          <h4>▲ Added</h4>
+          <h4>▲ Added / changed</h4>
           <ul>
-            <li>[Feature]</li>
-            <li>[Feature]</li>
-            <li>[Feature]</li>
+            <li>[Change]</li>
+            <li>[Change]</li>
+            <li>[Change]</li>
           </ul>
         </div>
         <div class="feature-col cut">
-          <h4>▼ Cut</h4>
+          <h4>▼ Removed / nerfed</h4>
           <ul>
-            <li>[Feature]</li>
-            <li>[Feature]</li>
+            <li>[Change]</li>
+            <li>[Change]</li>
           </ul>
         </div>
       </div>
 
-      <h2>Performance & bugs</h2>
-      <p>[How does it actually run, hours in — not on launch trailer footage. Note platform-specific issues if relevant.]</p>
+      <h2>Was this actually asked for?</h2>
+      <p>[This is where the community-research goes — what were players actually asking for on Reddit, Discord, forums, etc. before this dropped? Link sources where you can. Be honest if the answer is "no one asked for this."]</p>
+
+      <div class="community-quote">
+        <span class="mark">"</span>
+        <blockquote>[Direct quote from a real player with actual game knowledge — get 2-3 specific answers over DM, don't paraphrase into your own voice. This should sound like them, not you.]</blockquote>
+        <div class="attribution">
+          <span class="name">[Name or handle]</span>
+          <span class="role">— [rank/role in the community]</span>
+          <a href="#" target="_blank" rel="noopener">[Source link, if public]</a>
+        </div>
+      </div>
+
+      <h2>File size & rollout</h2>
+      <p>[Download size per platform, install time if notable, and any platform-specific rollout issues — server downtime, patch bugs on a specific console, etc.]</p>
+
+      <h2>The long view</h2>
+      <p>[Your honest take — separate from whether players liked it. Was this actually good for where the game is headed long-term? What might this decision push the developers into next — more content like this, a pattern they now have to keep up, a promise they've implicitly made to the community? This is where you get to be right even if the internet disagrees with you.]</p>
 
       <div class="verdict-box">
         <h3>The verdict</h3>
-        <p>[Two or three sentences — the bottom line someone skimming the page should walk away with.]</p>
+        <p>[Two or three sentences — did this patch actually make the game better, and does that match what the community seems to think?]</p>
       </div>
     </article>
 
     <section class="related-section">
-      <h2>More reviews</h2>
-      <div class="review-grid" id="related-reviews"></div>
+      <h2>More Patch Watch</h2>
+      <div class="review-grid" id="related-patchwatch"></div>
     </section>
 
     <section class="comment-section">
       <h2>What do you think?</h2>
-      <p class="sub">Disagree with the verdict? Say so — no account needed.</p>
+      <p class="sub">Did this patch land for you? No account needed.</p>
       <div id="cusdis_thread"
         data-host="https://cusdis.com"
         data-app-id="3e4e2aaa-d0ea-420b-ba80-d56f2235f3df"
-        data-page-id="format-preview-1"
-        data-page-url="https://thepatchdesk.com/reviews/format-preview-1.html"
-        data-page-title="Review Title Goes Here"
+        data-page-id="patchwatch-format-preview-1"
+        data-page-url="https://thepatchdesk.com/patch-watch/format-preview-1.html"
+        data-page-title="Game Title — v2.4 Update"
         data-theme="dark">
       </div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
@@ -166,21 +176,28 @@
 <footer>
   <div class="wrap foot-grid">
     <p class="foot-disclosure">The Patch Desk publishes independent game reviews. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
-    <nav class="foot-links">
+    <div class="foot-right">
+      <nav class="foot-links">
       <a href="../index.html#reviews">Reviews</a>
       <a href="../index.html#patch-watch">Patch Watch</a>
       <a href="../patchdesk-about.html">About</a>
     </nav>
+      <a href="https://x.com/thepatchdesk" class="social-link" target="_blank" rel="noopener" aria-label="The Patch Desk on X">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
   </div>
 </footer>
 
-<script src="../data-reviews.js"></script>
+<script src="../data-patchwatch.js"></script>
 <script src="../patchdesk-cards.js"></script>
 <script src="../patchdesk-app.js"></script>
 <script>
   // IMPORTANT: update "format-preview-1" to this article's own slug
-  // when you duplicate this template for a real review.
-  renderRelated("reviews", "#related-reviews", "format-preview-1", 3);
+  // when you duplicate this template for a real check-in.
+  renderRelated("patchwatch", "#related-patchwatch", "format-preview-1", 3);
 </script>
 </body>
 </html>

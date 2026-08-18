@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Reviews — The Patch Desk</title>
-<meta name="description" content="Every honest game review from The Patch Desk, newest first.">
-<link rel="canonical" href="https://thepatchdesk.com/patchdesk-reviews.html">
+<title>Reveal Breakdowns Archive — The Patch Desk</title>
+<meta name="description" content="Every pre-launch Reveal Breakdown from The Patch Desk — what's officially confirmed before an update drops.">
+<link rel="canonical" href="https://thepatchdesk.com/patchdesk-reveals.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -33,7 +33,7 @@
     <nav class="main-nav">
       <a href="index.html#reviews">Reviews</a>
       <a href="index.html#patch-watch">Patch Watch</a>
-      <a href="index.html#how-we-review">How We Review</a>
+      <a href="patchdesk-all.html">Everything</a>
       <a href="patchdesk-about.html">About</a>
     </nav>
   </div>
@@ -42,37 +42,33 @@
 <main>
   <section class="hero" style="padding-bottom: 20px;">
     <div class="wrap">
-      <p class="eyebrow">All reviews</p>
-      <h1>Every review, newest first</h1>
-      <p class="hero-sub">The full archive — no pagination gimmicks, just scroll.</p>
+      <p class="eyebrow">Reveal Breakdowns archive</p>
+      <h1>Every pre-launch breakdown, newest first</h1>
+      <p class="hero-sub">What's officially confirmed before an update drops, and how the community's reacting to the announcement.</p>
     </div>
   </section>
 
   <section class="section" style="padding-top: 20px;">
     <div class="wrap">
-      <div class="sort-bar" id="reviews-sort">
+      <div class="sort-bar" id="reveals-sort">
         <button data-sort="newest" class="active">Newest</button>
         <button data-sort="oldest">Oldest</button>
-        <button data-sort="score">Highest score</button>
       </div>
-      <div class="review-grid" id="reviews-full"></div>
+      <div class="review-grid" id="reveals-full"></div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap foot-grid">
-    <p class="foot-disclosure">The Patch Desk publishes independent game reviews. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
+    <p class="foot-disclosure">The Patch Desk publishes independent game coverage. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
     <div class="foot-right">
       <nav class="foot-links">
-      <a href="index.html#reviews">Reviews</a>
-      <a href="index.html#patch-watch">Patch Watch</a>
-      <a href="patchdesk-about.html">About</a>
-      <a href="patchdesk-contact.html">Contact</a>
-      <a href="patchdesk-terms.html">Terms</a>
-      <a href="patchdesk-privacy.html">Privacy</a>
-      <a href="feed.xml">RSS</a>
-    </nav>
+        <a href="index.html#reviews">Reviews</a>
+        <a href="index.html#patch-watch">Patch Watch</a>
+        <a href="patchdesk-all.html">Everything</a>
+        <a href="patchdesk-about.html">About</a>
+      </nav>
       <a href="https://x.com/thepatchdesk" class="social-link" target="_blank" rel="noopener" aria-label="The Patch Desk on X">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -82,12 +78,12 @@
   </div>
 </footer>
 
-<script src="data-reviews.js"></script>
+<script src="data-reveals.js"></script>
 <script src="patchdesk-cards.js"></script>
 <script src="patchdesk-app.js"></script>
 <script>
-  renderCards("reviews", "#reviews-full");
-  initSortBar("reviews", "#reviews-sort", "#reviews-full");
+  renderCards("reveals", "#reveals-full");
+  initSortBar("reveals", "#reveals-sort", "#reveals-full");
 </script>
 </body>
 </html>
