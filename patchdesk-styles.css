@@ -108,6 +108,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   color: var(--text);
   text-decoration: none;
   display: inline-flex; align-items: center; gap: 9px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .logo .mark { color: var(--brand); display: inline-flex; }
 .logo .mark svg { width: 24px; height: 24px; }
@@ -532,9 +534,8 @@ footer { border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 20
   .wrap { padding: 0 18px; }
   .hero { padding: 48px 0 40px; }
   .foot-grid { flex-direction: column; }
-  .site-header .wrap { height: 58px; }
-  .logo { font-size: 1.35rem; }
-  .main-nav { gap: 14px; }
+  .site-header .wrap { height: auto; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; gap: 8px 0; }
+  .logo { font-size: 1.25rem; }
+  .main-nav { gap: 10px 16px; flex-wrap: wrap; width: 100%; }
   .main-nav a { font-size: 0.72rem; }
-  .main-nav a:nth-child(2) { display: none; }
 }
