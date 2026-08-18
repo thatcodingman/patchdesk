@@ -1,29 +1,33 @@
 <!--
-  THE PATCH DESK — REVIEW ARTICLE TEMPLATE
-  =========================================
-  How to publish a new review:
-  1. Copy this file to reviews/your-game-slug.html
-  2. Replace the placeholder title, meta, scores, and body copy
-  3. In ../data-reviews.js, set that review's "live" to true, "slug"
-     to match your filename (without .html), and "date" to today
-  4. Update the renderRelated(...) slug near the bottom of this file
-     to match your own slug (so it doesn't try to exclude itself wrong)
-  5. Cusdis App ID is already set below — no need to touch it again
+  THE PATCH DESK — REVEAL BREAKDOWN TEMPLATE
+  ============================================
+  A third content type, separate from Reviews and Patch Watch: covers
+  what's officially confirmed about an upcoming update BEFORE it's
+  live, plus community reaction to the announcement itself. Never
+  claims post-launch experience it doesn't have.
+
+  This copy is already filled in with the first real one (R6 Siege
+  Operation Split Fire). To reuse for the next game's reveal:
+  1. Copy this file to reveals/your-slug.html
+  2. Replace the content, keep the honest pre-launch framing
+  3. Update the renderRelated/comment page-id details if you wire
+     this content type into the data system later
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Review Title Goes Here — The Patch Desk</title>
-<meta name="description" content="Is Review Title Goes Here worth the price? Our honest verdict, compared to last year, with a real tally of what got added and cut.">
-<link rel="canonical" href="https://thepatchdesk.com/reviews/format-preview-1.html">
-<meta property="og:title" content="Review Title Goes Here — The Patch Desk">
+<title>Rainbow Six Siege — Operation Split Fire: What's Coming Sept 1 — The Patch Desk</title>
+<meta name="description" content="A pre-launch breakdown of Operation Split Fire: Noor, Legend Division, the Villa rework, and every balance change — plus how the community is reacting to the announcement.">
+<link rel="canonical" href="https://thepatchdesk.com/reveals/r6s-operation-split-fire.html">
+<meta property="og:title" content="Operation Split Fire: What's Coming Sept 1 — The Patch Desk">
 <meta property="og:type" content="article">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:image" content="https://thepatchdesk.com/patchdesk-og.png">
+<link rel="alternate" type="application/rss+xml" title="The Patch Desk" href="../feed.xml">
 <link rel="stylesheet" href="../patchdesk-styles.css">
 </head>
 <body>
@@ -53,50 +57,53 @@
 
 <main>
   <div class="wrap">
-    <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="../patchdesk-reviews.html">Reviews</a> / Review Title Goes Here</p>
+    <p class="breadcrumb"><a href="../index.html">Home</a> / Reveal Breakdown / Rainbow Six Siege</p>
 
     <section class="article-header">
-      <span class="badge-live">REVIEW</span>
-      <h1 style="margin:0;">Review Title Goes Here</h1>
+      <span class="badge-live reveal">REVEAL BREAKDOWN</span>
+      <h1 style="margin:0;">Operation Split Fire — What's Actually Coming September 1</h1>
       <div class="article-meta-line">
-        <span>Platform</span>
-        <span>Genre</span>
-        <span>Launch price: $XX</span>
-        <span>Reviewed [Month Year]</span>
+        <span>Rainbow Six Siege</span>
+        <span>PC, Xbox, PlayStation</span>
+        <span>Officially revealed Aug 15, 2026</span>
+        <span>Full launch: Sept 1, 2026</span>
       </div>
     </section>
+
+    <div class="prelaunch-banner">
+      <span class="icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="2.5" stroke="#f2b134" stroke-width="1.8"/>
+          <path d="M3 9.5h18" stroke="#f2b134" stroke-width="1.8"/>
+          <path d="M8 3v3.5M16 3v3.5" stroke="#f2b134" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="8.5" cy="14" r="1.1" fill="#f2b134"/>
+          <circle cx="12" cy="14" r="1.1" fill="#f2b134"/>
+          <circle cx="15.5" cy="14" r="1.1" fill="#f2b134"/>
+        </svg>
+      </span>
+      <p><strong>This is a preview, not a Patch Watch check-in.</strong> Operation Split Fire isn't live yet — full release is September 1, 2026. Everything below is officially confirmed by Ubisoft, plus how the community is reacting to the announcement itself. Once it's actually live, we'll come back a few days later with the real Patch Watch: post-launch reaction, technical details, and whether the live version holds up to this preview.</p>
+    </div>
 
     <div class="scorecard" style="max-width:520px; margin-bottom:40px;">
       <div class="scorecard-head">
         <div>
-          <div class="game-title">Overall verdict</div>
-          <div class="plat">Based on the four questions below</div>
+          <div class="game-title">What's confirmed</div>
+          <div class="plat">Straight from Ubisoft's official patch notes</div>
         </div>
-        <div class="overall-score">X.X<span>/ 10</span></div>
       </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>Worth the price</span><span class="val">Yes / No / Sort of</span></div>
-        <div class="meter"><div class="meter-fill good" style="width:80%"></div></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>vs. last year</span><span class="val">+X%</span></div>
-        <div class="meter"><div class="meter-fill good" style="width:60%"></div></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>Features added vs. cut</span><span class="val">X / X</span></div>
-        <div class="meter"><div class="meter-fill mid" style="width:70%"></div></div>
-      </div>
-      <div class="stat-row">
-        <div class="stat-label"><span>Performance / bugs</span><span class="val">Smooth / Rough</span></div>
-        <div class="meter"><div class="meter-fill good" style="width:75%"></div></div>
-      </div>
+      <ul class="confirmed-list">
+        <li><span class="check">✓</span> New Defender Noor — Horus Lance Launcher, a dedicated shield counter</li>
+        <li><span class="check">✓</span> Legend Division — new SoloQ ranked tier above Champion</li>
+        <li><span class="check">✓</span> Villa targeted map update — Library bomb site moves to the basement</li>
+        <li><span class="check">✓</span> Major balance pass — SMG-12, MK 14 EBR, and AR-15.50 all nerfed</li>
+      </ul>
     </div>
 
     <div class="video-slot">
       <div class="icon">▶</div>
       <div style="flex:1;">
         <h4>Video breakdown coming soon</h4>
-        <p>If you'd rather watch this one than read it, we're working on it — the vlog version drops here as soon as it's ready. Check back, or drop your email and we'll tell you the second it's live.</p>
+        <p>Once Split Fire is actually live, a vlog-style breakdown is planned alongside the real Patch Watch. Drop your email and we'll tell you the second it's live.</p>
         <form class="notify-form" name="patchdesk-video-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field-video">
           <input type="hidden" name="form-name" value="patchdesk-video-notify">
           <p style="display:none;"><label>Don't fill this out: <input name="bot-field-video"></label></p>
@@ -108,54 +115,55 @@
     </div>
 
     <article class="article-body">
-      <h2>Worth the price?</h2>
-      <p>[Write the honest take here — does the launch price match what you actually get? Be specific about what you're paying for.]</p>
+      <h2>What's actually changing</h2>
+      <p><strong>Noor.</strong> His Horus Lance Launcher fires a projectile that burrows into a ballistic shield and then ignites, forcing the shield-carrier to either drop it or take serious damage. It also sticks to walls, hatches, and other gadgets, creating an area-denial tool on top of the shield counter. Shields have been close to unpunishable for a long time — this is a direct, deliberate answer to that.</p>
 
-      <h2>How it compares to last year</h2>
-      <p>[For sequels/annual releases: what's genuinely different, and what's just a reskin? Reference specifics from the previous version.]</p>
+      <p><strong>Legend Division.</strong> A new SoloQ-only ranked tier sitting above Champion, opening mid-season. Getting in requires Champion rank, at least Platinum the previous season, a clean reputation standing, and extra PC security requirements (Secure Boot, Windows Memory Integrity, TPM 2.0, plus 2FA). Everyone can view the leaderboard even if they can't play in it.</p>
 
-      <h2>What got added, what got cut</h2>
-      <div class="feature-columns">
-        <div class="feature-col added">
-          <h4>▲ Added</h4>
-          <ul>
-            <li>[Feature]</li>
-            <li>[Feature]</li>
-            <li>[Feature]</li>
-          </ul>
-        </div>
-        <div class="feature-col cut">
-          <h4>▼ Cut</h4>
-          <ul>
-            <li>[Feature]</li>
-            <li>[Feature]</li>
-          </ul>
+      <p><strong>Villa.</strong> Not a full rework — a targeted update. The Living Room/Library bomb site moves down into the basement, and the garage shifts from outdoor to indoor. Smaller in scope than past map reworks, but aimed at a site that's needed attention for a while.</p>
+
+      <p><strong>Balance changes.</strong> The SMG-12 is getting gutted — damage down from 28 to 16, magazine from 32 to 22, max ammo from 129 to 111. The AR-15.50 and MK 14 EBR are both losing damage and their muzzle brakes. On the other side, the SPSMG9, Kapkan, and Echo all get small buffs, and Dokkaebi's Jegeo Payload now requires a constant connection to complete instead of firing and forgetting.</p>
+
+      <h2>Was this actually asked for?</h2>
+      <p>Shields have been a real problem for a while — C4 was close to the only reliable counter, so yes, a dedicated answer was something the community wanted. Noor being able to punch through reinforced walls that easily is already the biggest concern I'm hearing, and a few people are worried he offsets other operators like Maverick, making breaches harder than they need to be. Outside of that, nobody's raised real complaints about the rest of his kit.</p>
+
+      <p>Villa's update is a little more mixed. Most people agree the old Library site never had much competitive life to it, so a change there makes sense. But not everyone's convinced it was the most urgent map to touch:</p>
+
+      <blockquote style="margin: 16px 0; padding-left: 20px; border-left: 2px solid var(--line-strong); color: var(--text-soft); font-style: italic;">"It was not the most needed map update, considering Oregon and Kafe are basically solved maps. While competitively viable, they create very stale gameplay." — DuckedMogged</blockquote>
+
+      <p>Fair point. Still, any map getting real attention is a good day in my book.</p>
+
+      <p>On the weapon side: the SMG-12 nerf is the big one. Dropping it from 28 to 16 damage, with less ammo to spray with, should push people toward using it more deliberately instead of pre-firing every angle — and toward actually diversifying into other secondaries. The DMR nerf — the MK 14 EBR and AR-15.50 both losing damage — gets a similar reaction. From what I'm hearing, people don't hate the change itself so much as the fact that it leaves the TCSG, a marksman rifle nobody touched this patch, as the most efficient option in that class by default — but overall, it still reads as the right direction. Between the shield frustration and the weapon changes, yeah — this is a patch the community was actually asking for.</p>
+
+      <div class="community-quote">
+        <span class="mark">"</span>
+        <blockquote>Noor will absolutely change the landscape of Siege upon release. His gadget can act as area denial, breach denial, and a shield counter. His versatility will likely make him a default pick.</blockquote>
+        <div class="attribution">
+          <span class="name">DuckedMogged</span>
+          <span class="role">— Siege community member</span>
         </div>
       </div>
 
-      <h2>Performance & bugs</h2>
-      <p>[How does it actually run, hours in — not on launch trailer footage. Note platform-specific issues if relevant.]</p>
+      <p>One anonymous player put the shield frustration more bluntly: getting steamrolled by a full squad running shields in the first 30 seconds of a round, with barely any way to answer back. That's the exact scenario Noor is built to break up.</p>
 
-      <div class="verdict-box">
-        <h3>The verdict</h3>
-        <p>[Two or three sentences — the bottom line someone skimming the page should walk away with.]</p>
-      </div>
+      <h2>Our prediction</h2>
+      <p>Early reaction across Reddit and Discord has been more positive than not — genuinely hard to find posts actively hating on this reveal. The loudest complaints are about the SMG-12 nerf feeling heavy-handed, plus the usual "classic Ubisoft" cynicism, but even that comes with an acknowledgment that people haven't actually played it yet, so the complaining might not hold once people adjust.</p>
+
+      <p>If it lands the way it's designed to, this should push more variety into gunfights — the SMG-12 losing its spray-and-forget power and the AR-15.50 easing off its dominance both mean regular rifles and secondaries actually get to compete again. Pair that with a genuinely reworked bomb site on Villa, and this reads like a patch built around long-term game health, not just a content drop.</p>
+
+      <h2>What's next</h2>
+      <p>Operation Split Fire goes fully live September 1. We'll be back a few days after with the real Patch Watch — actual post-launch reaction, real technical details, and whether the live version holds up to everything above.</p>
     </article>
-
-    <section class="related-section">
-      <h2>More reviews</h2>
-      <div class="review-grid" id="related-reviews"></div>
-    </section>
 
     <section class="comment-section">
       <h2>What do you think?</h2>
-      <p class="sub">Disagree with the verdict? Say so — no account needed.</p>
+      <p class="sub">Excited for Split Fire, or skeptical? No account needed.</p>
       <div id="cusdis_thread"
         data-host="https://cusdis.com"
         data-app-id="3e4e2aaa-d0ea-420b-ba80-d56f2235f3df"
-        data-page-id="format-preview-1"
-        data-page-url="https://thepatchdesk.com/reviews/format-preview-1.html"
-        data-page-title="Review Title Goes Here">
+        data-page-id="reveal-r6s-operation-split-fire"
+        data-page-url="https://thepatchdesk.com/reveals/r6s-operation-split-fire.html"
+        data-page-title="Operation Split Fire — What's Coming Sept 1">
       </div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     </section>
@@ -164,7 +172,7 @@
 
 <footer>
   <div class="wrap foot-grid">
-    <p class="foot-disclosure">The Patch Desk publishes independent game reviews. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
+    <p class="foot-disclosure">The Patch Desk publishes independent game coverage. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
     <nav class="foot-links">
       <a href="../index.html#reviews">Reviews</a>
       <a href="../index.html#patch-watch">Patch Watch</a>
@@ -173,13 +181,6 @@
   </div>
 </footer>
 
-<script src="../data-reviews.js"></script>
-<script src="../patchdesk-cards.js"></script>
 <script src="../patchdesk-app.js"></script>
-<script>
-  // IMPORTANT: update "format-preview-1" to this article's own slug
-  // when you duplicate this template for a real review.
-  renderRelated("reviews", "#related-reviews", "format-preview-1", 3);
-</script>
 </body>
 </html>
