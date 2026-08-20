@@ -144,6 +144,41 @@ function initSortBar(kind, barSelector, containerSelector) {
   });
 }
 
+/**
+ * Renders a single "newest thing on the whole site" showcase card,
+ * regardless of content type — correctly badged/linked whether the
+ * newest live item is a Review, Patch Watch entry, or Reveal.
+ */
+function renderNewestShowcase(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
+
+  const combined = [
+    ...REVIEWS.map(r => ({ ...r, _badge: "REVIEW", _path: "reviews" })),
+    ...PATCH_WATCH.map(u => ({ ...u, _badge: "PATCH WATCH", _path: "patch-watch" })),
+    ...REVEALS.map(v => ({ ...v, _badge: "REVEAL BREAKDOWN", _path: "reveals" }))
+  ].filter(item => item.live);
+
+  if (!combined.length) {
+    container.innerHTML = "";
+    return;
+  }
+
+  combined.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  const newest = combined[0];
+  const desc = newest.blurb || newest.meta || "";
+
+  container.innerHTML = `
+    <div class="cta-band" style="grid-template-columns: 1fr auto; align-items: center;">
+      <div>
+        <p class="eyebrow">New: ${newest._badge}</p>
+        <h3 style="margin-top:8px;">${newest.title}</h3>
+        <p>${desc}</p>
+      </div>
+      <a href="${newest._path}/${newest.slug}.html" class="btn btn-primary" style="white-space:nowrap;">Read it →</a>
+    </div>`;
+}
+
 /* ---------------- combined "Everything" browse page ---------------- */
 
 function allContentItems(sortMode = "newest") {
