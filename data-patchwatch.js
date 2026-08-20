@@ -33,6 +33,19 @@ const PATCH_WATCH = [
     patchSize: "6.1 GB (all platforms)"
   },
   {
+    slug: "helldivers-2-devoid-of-liberty",
+    title: "Helldivers 2 — Devoid of Liberty: The Illuminate Void",
+    meta: "Checked in ~1 week after launch",
+    live: true,
+    date: "2026-08-19",
+    blurb: "The Illuminate's first real content update — good systems, thin enemy roster.",
+    delta: "flat",
+    deltaLabel: "A step forward, not a home run",
+    sentiment: 61,
+    requested: "mixed",
+    patchSize: "5.46 GB (PS5)"
+  },
+  {
     slug: "format-preview-3",
     title: "Game Title — Balance Patch",
     meta: "Checked in · 3 months post-launch",
