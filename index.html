@@ -99,16 +99,7 @@
     </div>
   </section>
   <section class="section" style="padding-bottom: 0;">
-    <div class="wrap">
-      <div class="cta-band" style="grid-template-columns: 1fr auto; align-items: center;">
-        <div>
-          <p class="eyebrow">New: Reveal Breakdowns</p>
-          <h3 style="margin-top:8px;">Rainbow Six Siege — Operation Split Fire</h3>
-          <p>What's officially confirmed before a big update drops, and how the community's reacting to the announcement.</p>
-        </div>
-        <a href="reveals/r6s-operation-split-fire.html" class="btn btn-primary" style="white-space:nowrap;">Read it →</a>
-      </div>
-    </div>
+    <div class="wrap" id="newest-showcase"></div>
   </section>
   <section class="section" id="reviews">
     <div class="wrap">
@@ -248,6 +239,7 @@
   renderCards("reviews", "#reviews-preview", 3);
   renderCards("patchwatch", "#patchwatch-preview", 3);
   renderCards("reveals", "#reveals-preview", 3);
+  renderNewestShowcase("#newest-showcase");
 </script>
 </body>
 </html>
