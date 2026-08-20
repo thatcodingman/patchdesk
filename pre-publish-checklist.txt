@@ -1,0 +1,128 @@
+PRE-PUBLISH CHECKLIST
+Compiled from real mistakes caught on StackScope and The Patch Desk.
+Run through this yourself before publishing anything — you shouldn't
+need ChatGPT or Grok to catch these anymore.
+=====================================================================
+
+
+1. PRICING / NUMBERS
+---------------------
+[ ] Did I check whether a scraped price is ANNUAL or MONTHLY billing?
+    (Freshdesk/Intercom both got this backwards on the first pass)
+
+[ ] If two of my sources disagree with each other, that's a signal
+    to check the vendor's OWN page directly — don't just pick
+    whichever number showed up more.
+    (Asana's free-tier seat cap changed from 10→2; sources split
+    exactly along "before" and "after" the change)
+
+[ ] Am I about to badge something "Best value" or "#1"? Actually
+    compare it against the others first — don't inherit a label
+    from an earlier draft without checking it's still true.
+    (Intercom was tagged "best value" while being the MOST
+    expensive tool in the set)
+
+[ ] Is a "highest price" I'm listing actually PUBLIC? If it only
+    shows up after logging in / talking to sales, it doesn't belong
+    in a "public price" column — check the vendor's own help docs,
+    not just their marketing page.
+    (ClickUp's Business Plus tier is explicitly NOT on their public
+    pricing page per their own help center)
+
+[ ] For fast-moving numbers (AI add-on pricing especially), prefer
+    the vendor's own changelog/docs over a blog's guess.
+
+[ ] Am I stating a number range with more precision than my sources
+    actually support? If sources disagree by a wide margin, widen
+    the range or soften the language instead of picking one number
+    and presenting it as exact.
+    (Zendesk add-on pricing — sources ranged $25–50, I initially
+    wrote "$35–50" which was narrower than what I'd actually found)
+
+
+2. TIMING / "IS THIS ACTUALLY LIVE"
+-------------------------------------
+[ ] Does the source say "launches [future date]" or "is live now"?
+    These are not the same thing — check the EXACT wording.
+    (R6 Siege's "reveal" was mistaken for a launch — it was a
+    pre-release patch notes drop, real launch was 2 weeks out)
+
+[ ] If something CAN be played early (test server, early access),
+    confirm WHO actually has access — a Test Server video isn't
+    the same as the full public release.
+
+[ ] For games with community-gated content (Major Orders, galactic
+    campaigns, etc.): the PATCH shipping and the CONTENT unlocking
+    can be different dates. Check both.
+    (Helldivers 2's base patch shipped Aug 12, but the actual
+    Illuminate/Void content didn't unlock until ~Aug 17-18, gated
+    behind a community campaign)
+
+[ ] Does a specific technical detail (exact download size, a named
+    bug, a specific error code) actually appear in an OFFICIAL
+    source? If it only appears in my draft and nowhere else,
+    that's a red flag it may be fabricated/hallucinated.
+
+
+3. SOURCING & ATTRIBUTION
+----------------------------
+[ ] Is the vendor/developer's OWN page cited as a source, not just
+    third-party blogs? Cite official first, cross-check with 2+
+    independent others.
+
+[ ] For any direct quote: is the platform stated (Discord/Reddit/
+    etc.), even if the person/server stays anonymous? "Shared
+    anonymously" alone isn't enough — say where it came from.
+
+[ ] For any original research number (a sentiment score I
+    calculated, an average I ran): is the METHODOLOGY explained
+    right next to the number? How many people, how were they
+    reached, how was it scored.
+
+[ ] Am I using a word like "everyone," "nearly all," or "most" when
+    my actual sample is small? Calibrate the language to the real
+    sample size — "several respondents" beats "nearly every
+    respondent" for a sample of 7.
+
+[ ] Double-check any pronoun/name/detail about a real person
+    (subject of a review, quoted community member) against the
+    actual source — don't assume.
+
+
+4. SITE CODE INTEGRITY
+-------------------------
+[ ] When I add a new <script> dependency (a new data file, a new
+    JS file) to ONE page, did I check every OTHER page that also
+    needs it? Don't just fix the page in front of you.
+    (patchdesk-app.js was missing from Contact/Terms/Privacy;
+    data-reveals.js was missing from the homepage — both broke
+    things silently, no visible error until checked)
+
+[ ] After adding something, actually reload the LIVE page and
+    check the browser console for red errors — don't just assume
+    a deploy worked because git push succeeded.
+
+[ ] Does a third-party embed (comments, widgets) match my site's
+    theme by default, or do I need to force dark mode / a color
+    override? Check, don't assume it inherits my CSS.
+
+[ ] Does a column header, badge, or label actually match what's
+    in the content below it? A "Removed/nerfed" heading over a
+    list that's 90% "changed," not "removed," is misleading even
+    if technically not false.
+
+
+5. EDITORIAL INTEGRITY
+-------------------------
+[ ] Is my own editorial verdict actually independent from the
+    community sentiment number, or did I just let one become a
+    mirror of the other? They're allowed to disagree.
+
+[ ] Am I presenting a full pre-launch preview as if it were
+    post-launch experience (fake bugs, fake server details, fake
+    install times)? If the thing isn't live yet, don't invent
+    what it's like to play.
+
+[ ] Before calling something finished: search the file for my own
+    placeholder markers (bracketed text, "TBD," "NEEDS RESEARCH")
+    and make sure none are left.
