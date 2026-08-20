@@ -69,10 +69,27 @@ function renderList(kind, containerSelector, items) {
  * kind: "reviews" | "patchwatch" | "reveals"
  * limit: number of cards to show, or null for all
  */
+/**
+ * Renders cards into a container. Defaults to "smart order": live
+ * (real, published) entries first, newest date first among those,
+ * then unpublished placeholder entries after. This is what makes
+ * a newly published piece automatically jump to the front of any
+ * homepage preview or archive page without manual reordering.
+ * kind: "reviews" | "patchwatch" | "reveals"
+ * limit: number of cards to show, or null for all
+ */
 function renderCards(kind, containerSelector, limit = null) {
-  const data = KIND_CONFIG[kind].data();
-  const items = limit ? data.slice(0, limit) : data;
-  renderList(kind, containerSelector, items);
+  const items = smartOrder(kind);
+  const sliced = limit ? items.slice(0, limit) : items;
+  renderList(kind, containerSelector, sliced);
+}
+
+function smartOrder(kind) {
+  const data = KIND_CONFIG[kind].data().slice();
+  return data.sort((a, b) => {
+    if (a.live !== b.live) return a.live ? -1 : 1; // live entries always first
+    return (b.date || "").localeCompare(a.date || ""); // newest first within each group
+  });
 }
 
 /* ---------------- sorting (per-type archive pages) ---------------- */
