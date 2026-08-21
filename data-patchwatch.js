@@ -46,6 +46,19 @@ const PATCH_WATCH = [
     patchSize: "5.46 GB (PS5)"
   },
   {
+    slug: "the-finals-1160",
+    title: "THE FINALS — v11.6.0 Space Mayhem",
+    meta: "Checked in · 1 day after launch",
+    live: true,
+    date: "2026-08-21",
+    blurb: "M11 gets hit hard, AKM gets a small buff, and melee finally chases better — but the Spear stamina rework is still a sore spot.",
+    delta: "up",
+    deltaLabel: "Correction patch, not a full fix",
+    sentiment: 66,
+    requested: "yes",
+    patchSize: "TBD — not verified, don't publish a number without a platform-specific source"
+  },
+  {
     slug: "format-preview-3",
     title: "Game Title — Balance Patch",
     meta: "Checked in · 3 months post-launch",
