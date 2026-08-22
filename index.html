@@ -3,40 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QuietHike — Software Price Changes, Caught and Verified</title>
-<meta name="description" content="Software companies raise prices quietly. QuietHike catches the change, verifies it against the vendor's own page, and tells you what actually happened — every week.">
-<link rel="canonical" href="https://quiethike.com/">
-<meta property="og:title" content="QuietHike — Software Price Changes, Caught and Verified">
+<title>The Patch Desk — Honest Game Reviews, No Cap</title>
+<meta name="description" content="Honest video game reviews: is it worth the price, how does it compare to last year, and what actually changed. No sponsored scores, no fluff.">
+<link rel="canonical" href="https://thepatchdesk.com/index.html">
+<meta property="og:title" content="The Patch Desk — Honest Game Reviews">
+<meta property="og:description" content="Is it worth the price? What changed since last year? Honest verdicts, no sponsored scores.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://quiethike.com/">
-<meta property="og:description" content="Software companies raise prices quietly. QuietHike catches the change, verifies it against the vendor's own page, and tells you what actually happened — every week.">
-<meta name="robots" content="index, follow">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta property="og:image" content="https://quiethike.com/og-image.png">
+<meta property="og:image" content="https://thepatchdesk.com/patchdesk-og.png">
+<link rel="alternate" type="application/rss+xml" title="The Patch Desk" href="feed.xml">
+<link rel="stylesheet" href="patchdesk-styles.css">
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3KLNY8ZB2S"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F4YWJK00NX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-3KLNY8ZB2S");
+  gtag('js', new Date());
+  gtag('config', 'G-F4YWJK00NX');
 </script>
-<meta name="google-adsense-account" content="ca-pub-8828337552440063">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="quiethike-styles.css">
 </head>
 <body>
 
+<div class="meme-ticker"><div class="track"></div></div>
+
 <header class="site-header">
   <div class="wrap">
-    <a href="index.html" class="logo"><span class="mark">▲▼</span> QuietHike</a>
+    <a href="index.html" class="logo">
+      <span class="mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="8" width="20" height="10" rx="5" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M7 11v4M5 13h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="16" cy="12" r="1.1" fill="currentColor"/>
+          <circle cx="18.5" cy="14.5" r="1.1" fill="currentColor"/>
+        </svg>
+      </span>
+      The Patch Desk
+    </a>
     <nav class="main-nav">
-      <a href="#log">This week</a>
-      <a href="#methodology">How we verify</a>
-      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#patch-watch">Patch Watch</a>
+      <a href="patchdesk-all.html">Everything</a>
+      <a href="patchdesk-reveals.html">Reveals</a>      <a href="#how-we-review">How We Review</a>
+      <a href="patchdesk-about.html">About</a>
     </nav>
   </div>
 </header>
@@ -44,156 +54,156 @@
 <main>
   <section class="hero">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow">Weekly price-change tracker</p>
-        <h1>Software raises prices quietly.<br>We watch, and we write it down.</h1>
-        <p class="hero-sub">Every week, we catch a real pricing change a vendor didn't put in a headline — a shrunk free tier, a renamed plan that costs more, a promo that quietly became the standard rate — verify it against the vendor's own page, and log it here.</p>
+      <div>
+        <p class="eyebrow">Honest verdicts · no sponsored scores</p>
+        <h1>Is it actually <span class="accent">worth the price?</span></h1>
+        <p class="hero-sub">Every review covers the same four things: what changed since last year, what got added or cut, how it runs, and whether it's actually worth what they're charging. No embargo fluff, no 9/10s handed out for free keys.</p>
         <div class="hero-ctas">
-          <a href="#log" class="btn btn-primary">See this week's changes</a>
-          <a href="#methodology" class="btn btn-ghost">How verification works</a>
+          <a href="#reviews" class="btn btn-primary">See the reviews</a>
+          <a href="#how-we-review" class="btn btn-ghost">How we score</a>
         </div>
       </div>
 
-      <div class="diff-card" aria-label="Recent price change example">
-        <div class="diff-head">
-          <span>quiethike/log</span>
-          <span class="diff-date">Aug 2026</span>
+      <div class="scorecard">
+        <span class="sticker" style="top:-18px; right:22px; --rot:-8deg;" aria-hidden="true">
+          <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="42" height="42" rx="8" fill="#171a23" stroke="#363c4d" stroke-width="1.5"/>
+            <path d="M23 12l3.3 6.7 7.4 1.1-5.35 5.2 1.26 7.35L23 28.9l-6.6 3.45 1.26-7.35-5.35-5.2 7.4-1.1L23 12z" fill="#f2b134"/>
+          </svg>
+        </span>
+        <div class="scorecard-head">
+          <div>
+            <div class="game-title">Sample Verdict</div>
+            <div class="plat">Format preview — real reviews launching soon</div>
+          </div>
+          <div class="overall-score">8.4<span>/ 10</span></div>
         </div>
-        <div class="diff-line diff-context">$ quickbooks --plan Plus --tier annual</div>
-        <div class="diff-line diff-removed">- ~$99–115/mo <span class="diff-label">(before Aug 1, 2026) <span class="src-tag">[3P — disputed]</span></span></div>
-        <div class="diff-line diff-added">+ $140/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
-        <div class="diff-line diff-context">$ figma --plan Professional --seat Full</div>
-        <div class="diff-line diff-removed">- ~$12/seat/mo <span class="diff-label">(pre–March 2025 pricing) <span class="src-tag">[3P]</span></span></div>
-        <div class="diff-line diff-added">+ $16/seat/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
-        <div class="diff-line diff-context">$ kit --plan Creator --subs 1000</div>
-        <div class="diff-line diff-removed">- $15/mo <span class="diff-label">(before Sept 2025, ~300 subs) <span class="src-tag">[3P]</span></span></div>
-        <div class="diff-line diff-added">+ $33/mo <span class="diff-label">(current) <span class="src-tag">[VENDOR]</span></span></div>
+
+        <div class="stat-row">
+          <div class="stat-label"><span>Worth the price</span><span class="val">Yes</span></div>
+          <div class="meter"><div class="meter-fill good" style="width:88%"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label"><span>Improvement vs. last year</span><span class="val">+62%</span></div>
+          <div class="meter"><div class="meter-fill good" style="width:62%"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label"><span>Features added vs. cut</span><span class="val">14 / 3</span></div>
+          <div class="meter"><div class="meter-fill mid" style="width:71%"></div></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-label"><span>Performance / bugs</span><span class="val">Rough</span></div>
+          <div class="meter"><div class="meter-fill bad" style="width:38%"></div></div>
+        </div>
       </div>
     </div>
   </section>
+  <section class="section" style="padding-bottom: 0;">
+    <div class="wrap" id="newest-showcase"></div>
+  </section>
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap;">
+        <div>
+          <p class="eyebrow">Latest reviews</p>
+          <h2>The desk is warming up</h2>
+          <p>Full reviews are in the works — here's the format every one of them will follow once they go live.</p>
+        </div>
+        <a href="patchdesk-reviews.html" class="btn btn-ghost" style="white-space:nowrap;">View all reviews</a>
+      </div>
+      <div class="review-grid" id="reviews-preview"></div>
+    </div>
+  </section>
 
-  <section class="section" id="log">
+  <section class="section" id="patch-watch">
+    <div class="wrap">
+      <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap;">
+        <div>
+          <p class="eyebrow">Ongoing coverage</p>
+          <h2>Patch Watch</h2>
+          <p>Reviews cover launch day. Patch Watch is where we check back in — did that big update actually make the game better, worse, or just different? <a href="patchdesk-patchwatch.html#how-we-grade">Here's how we grade it.</a></p>
+        </div>
+        <a href="patchdesk-patchwatch.html" class="btn btn-ghost" style="white-space:nowrap;">View all Patch Watch</a>
+      </div>
+      <div class="review-grid" id="patchwatch-preview"></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap;">
+        <div>
+          <p class="eyebrow">Pre-launch coverage</p>
+          <h2>Reveal Breakdowns</h2>
+          <p>What's officially confirmed before a big update drops, and how the community's reacting to the announcement.</p>
+        </div>
+        <a href="patchdesk-reveals.html" class="btn btn-ghost" style="white-space:nowrap;">View all Reveals</a>
+      </div>
+      <div class="review-grid" id="reveals-preview"></div>
+    </div>
+  </section>
+  <section class="section" id="how-we-review">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">The log</p>
-        <h2>This week's changes</h2>
-        <p>Every entry is verified against the vendor's current pricing page; historical "before" prices are separately sourced and labeled, since a vendor's own page rarely shows what something used to cost.</p>
+        <p class="eyebrow">How we review</p>
+        <h2>Same four questions, every time</h2>
+        <p>No review goes up without covering all four — that consistency is the whole point.</p>
       </div>
-
-      <div class="log-list">
-
-        <article class="log-entry">
-          <div class="log-meta">
-            <span class="log-date">Announced Sep 8, 2025 · phased through Mar 28, 2029</span>
-            <span class="log-tag tag-up">Structural change</span>
-            <span class="log-tag tag-verified">Verified</span>
-          </div>
-          <h3>Atlassian is sunsetting Data Center on a fixed three-year clock — new-customer sales already ended</h3>
-          <div class="diff-line diff-removed">- Data Center: open for new customers <span class="src-tag">[VENDOR]</span></div>
-          <div class="diff-line diff-added">+ Mar 30, 2026: new-customer sales ended. Mar 30, 2028: existing-customer expansions end. Mar 28, 2029: licenses expire, go read-only <span class="src-tag">[VENDOR]</span></div>
-          <p class="log-body">This isn't a secret change — Atlassian announced it publicly on September 8, 2025, and posted a community reminder right before the first deadline hit. The real story is the phasing: existing customers can still renew and expand for now, but that window closes in stages over three years, with a hard read-only cutoff at the end. One exception worth knowing — Bitbucket Data Center isn't included; those customers get a hybrid Data Center + Cloud license instead, available mid-2026. Atlassian is offering migration incentives (a 10–20% first-year Cloud Enterprise discount for eligible purchases by June 2027, step-up credits, and dual licensing for larger customers) — but we could not verify a specific average cost-increase figure for customers migrating to Cloud. Treat any claim of "customers pay X% more" as unconfirmed until a named source with visible methodology backs it.</p>
-          <p class="log-source">Sources: <a href="https://www.atlassian.com/licensing/data-center-end-of-life" target="_blank" rel="noopener" style="color: var(--accent);">Atlassian — Data Center End of Life (official FAQ)</a> [VENDOR] · <a href="https://www.atlassian.com/blog/announcements/atlassian-ascend" target="_blank" rel="noopener" style="color: var(--accent);">Atlassian — "Ascend to the cloud" announcement</a> [VENDOR]</p>
-        </article>
-
-        <article class="log-entry">
-          <div class="log-meta">
-            <span class="log-date">Announced August 2025, migration ongoing through 2026</span>
-            <span class="log-tag tag-up">Structural change</span>
-            <span class="log-tag tag-verified">Verified</span>
-          </div>
-          <h3>Salesforce replaces Einstein AI packaging with a $125/user/mo Agentforce add-on</h3>
-          <div class="diff-line diff-removed">- Einstein add-ons / Einstein 1 Editions (retired)</div>
-          <div class="diff-line diff-added">+ Agentforce add-ons, $125/user/mo billed annually <span class="src-tag">[VENDOR]</span> — $1,500/user/year <span class="src-tag">[DERIVED — VENDOR]</span></div>
-          <p class="log-body">This is an add-on price on top of the underlying Salesforce edition, not a replacement for Salesforce's core CRM subscription. Salesforce announced the Einstein-to-Agentforce replacement publicly in August 2025 — so it's not a hidden pricing-page swap — but the migration mechanics are where it gets less obvious. Agentforce (Default) reached End of Sale on June 17, 2025, and Salesforce's own Help docs lay out what happens when an existing Einstein customer upgrades their SKU to Agentforce. Separately, as of October 24, 2025, Agentforce usage outside unmetered employee-agent activity is tracked through a new "Flex Credits" system — so the $125/month sticker price doesn't mean unlimited AI usage. We could not verify a universal rule that every legacy Einstein customer is automatically moved to the new pricing at renewal; treat that specific claim as unconfirmed.</p>
-          <p class="log-source">Sources: <a href="https://www.salesforce.com/news/stories/pricing-update-2025/" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce News — Pricing Update announcement</a> [VENDOR] · <a href="https://www.salesforce.com/agentforce/pricing/" target="_blank" rel="noopener" style="color: var(--accent);">Agentforce pricing page</a> [VENDOR] · <a href="https://help.salesforce.com/s/articleView?id=005197697&language=en_US&type=1" target="_blank" rel="noopener" style="color: var(--accent);">Salesforce Help — Flex Credit Rate Card FAQ</a> [VENDOR]</p>
-        </article>
-
-        <article class="log-entry">
-          <div class="log-meta">
-            <span class="log-date">Aug 1, 2026</span>
-            <span class="log-tag tag-up">Price increase</span>
-            <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
-          </div>
-          <h3>QuickBooks raises Essentials, Plus, and Advanced — but not Simple Start</h3>
-          <p class="log-body" style="font-size: 0.86rem; color: var(--diff-red); margin-bottom: 14px;"><b>Correction:</b> an earlier version of this entry incorrectly stated that QuickBooks Simple Start's price rose to $38/mo on August 1, 2026. QuickBooks' own official pricing update confirms Simple Start, Free, Lite, and Ledger were explicitly excluded from this increase — only Essentials, Plus, and Advanced changed. This entry has been corrected to reflect that.</p>
-          <div class="diff-line diff-removed">- ~$99–115/mo <span class="src-tag">[3P — disputed]</span> (Plus, before Aug 1, 2026 — sources disagree on the exact prior figure)</div>
-          <div class="diff-line diff-added">+ $140/mo <span class="src-tag">[VENDOR]</span> (Plus, current)</div>
-          <p class="log-body">QuickBooks Online raised prices for Essentials, Plus, and Advanced at renewals on or after August 1, 2026 — Simple Start, Free, Lite, and Ledger were not part of this increase, per QuickBooks' own announcement. Essentials rose to $85/mo (third-party sources disagree on the prior figure, citing either $60 or $75). Advanced rose to $340/mo (prior figure similarly disputed between $200 and $275 across sources). Prepaid annual subscribers generally keep their existing rate until the current term ends, and some recent subscribers get a six-month price-protection window. We could not source an exact count of how many total increases QuickBooks has made since 2022; treat "a series of past increases" as accurate without a specific number attached.</p>
-          <p class="log-source">Sources: <a href="https://quickbooks.intuit.com/r/product-update/quickbooks-price-changes/" target="_blank" rel="noopener" style="color: var(--accent);">QuickBooks — official pricing update announcement</a> [VENDOR] · <a href="https://www.certumsolutions.com/library/quickbooks-price-increase-august-2026" target="_blank" rel="noopener" style="color: var(--accent);">Certum Solutions</a> [3P] · <a href="https://www.mosofin.com/blog/quickbooks-price-increase-2026" target="_blank" rel="noopener" style="color: var(--accent);">MosoFin</a> [3P — disagrees with Certum on prior Plus/Advanced figures]</p>
-        </article>
-
-        <article class="log-entry">
-          <div class="log-meta">
-            <span class="log-date">Mar 11, 2025</span>
-            <span class="log-tag tag-up">Structural change</span>
-            <span class="log-tag tag-verified">Verified</span>
-          </div>
-          <h3>Figma's per-product pricing became per-seat — and monthly billing disappeared from Organization and Enterprise</h3>
-          <div class="diff-line diff-removed">- Figma Design, Dev Mode, FigJam billed separately <span class="src-tag">[VENDOR]</span></div>
-          <div class="diff-line diff-added">+ Unified seat types (Full/Dev/Collab), $16–$90/seat/mo <span class="src-tag">[VENDOR]</span></div>
-          <p class="log-body">The bigger story isn't the sticker price — it's that Organization and Enterprise no longer offer monthly billing at all going forward, only annual. Teams with fluctuating headcount lost a flexibility option that existed before the overhaul, and it's easy to miss unless you're pricing out a renewal.</p>
-          <p class="log-source">Sources: <a href="https://www.figma.com/professional/" target="_blank" rel="noopener" style="color: var(--accent);">Figma — Professional plan pricing</a> [VENDOR] · <a href="https://help.figma.com/hc/en-us/articles/13839214115607-Professional-plan-overview" target="_blank" rel="noopener" style="color: var(--accent);">Figma Help — Professional plan overview</a> [VENDOR] · <a href="https://forum.figma.com/t/i-m-curious-about-the-differences-in-billing-methods-for-the-plans/94132" target="_blank" rel="noopener" style="color: var(--accent);">Figma community forum</a> [VENDOR]</p>
-        </article>
-
-        <article class="log-entry">
-          <div class="log-meta">
-            <span class="log-date">Sep 2025</span>
-            <span class="log-tag tag-up">Price increase</span>
-            <span class="log-tag tag-partial">Current price verified · historical price third-party</span>
-          </div>
-          <h3>Kit's Creator plan roughly doubled — and the old $15 tier just stopped existing</h3>
-          <div class="diff-line diff-removed">- $15/mo <span class="src-tag">[3P]</span> (Creator, ~300 subscribers, legacy pricing)</div>
-          <div class="diff-line diff-added">+ $33/mo annual, $39/mo monthly <span class="src-tag">[VENDOR]</span> (Creator, 1,000 subscribers)</div>
-          <p class="log-body">This wasn't a gradual increase — the old low-tier pricing structure was retired outright in the September 2025 repricing. Anyone quoting Kit's "starts at $15" is quoting a price that no longer exists for new signups.</p>
-          <p class="log-source">Sources: <a href="https://help.kit.com/en/articles/4494683-creator-plan-vs-creator-pro" target="_blank" rel="noopener" style="color: var(--accent);">Kit's own help center</a> [VENDOR] · <a href="https://ecommerce-platforms.com/articles/convertkit-pricing" target="_blank" rel="noopener" style="color: var(--accent);">Ecommerce-Platforms.com, published April 2024 — contemporaneous record of the $15/mo price while it was still current</a> [3P] · <a href="https://buyersprint.com/2026/04/05/convertkit-pricing-2026/" target="_blank" rel="noopener" style="color: var(--accent);">BuyerSprint</a> [3P]</p>
-        </article>
-
+      <div class="method-grid">
+        <div class="method-card">
+          <span class="num">01</span>
+          <h4>Worth the price?</h4>
+          <p>Straight answer on whether the asking price matches what you actually get at launch.</p>
+        </div>
+        <div class="method-card">
+          <span class="num">02</span>
+          <h4>vs. last year</h4>
+          <p>For sequels and annual releases: is this actually better, or a reskin with a new number on the box?</p>
+        </div>
+        <div class="method-card">
+          <span class="num">03</span>
+          <h4>Added vs. cut</h4>
+          <p>A real tally of what features showed up and what quietly disappeared since the last version.</p>
+        </div>
+        <div class="method-card">
+          <span class="num">04</span>
+          <h4>Performance & bugs</h4>
+          <p>How it actually runs — not the marketing trailer, the real hours-played experience.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="methodology">
+  <section class="section">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Methodology</p>
-        <h2>How we verify a change before logging it</h2>
-      </div>
-      <ol class="method-list">
-        <li>
-          <div>
-            <h4>Catch it</h4>
-            <p>A price change surfaces from a vendor's own changelog, a community forum thread, a support article update, or a discrepancy noticed while researching elsewhere.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h4>Verify against the vendor directly</h4>
-            <p>Before anything gets logged, we check the vendor's own current pricing page — never a third-party blog alone. If the vendor's own pages disagree with each other, we say so rather than picking one.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h4>Cross-check the "before" price</h4>
-            <p>The old price gets the same scrutiny as the new one — sourced from an archived page, a prior independent pricing tracker, or the vendor's own changelog, never guessed.</p>
-          </div>
-        </li>
-        <li>
-          <div>
-            <h4>Log it plainly</h4>
-            <p>What changed, what it actually means for a real buyer, and where to verify it yourself. No affiliate framing, no "which plan should you pick" — just what happened.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
+      <div class="cta-band">
+        <div>
+          <h3>Videos are coming too</h3>
+          <p>Written reviews are launching first — vlog-style video breakdowns are in production and will drop right alongside the written verdict.</p>
+          <form class="notify-form" name="patchdesk-video-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field-video">
+            <input type="hidden" name="form-name" value="patchdesk-video-notify">
+            <p style="display:none;"><label>Don't fill this out: <input name="bot-field-video"></label></p>
+            <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address">
+            <button type="submit">Notify me</button>
+          </form>
+          <p class="notify-success">✓ You're on the list — we'll email you the second the first video drops.</p>
+          <p class="notify-note">One email, when it's actually ready. No spam in between.</p>
+        </div>
 
-  <section class="section" id="about" style="padding-top: 0;">
-    <div class="wrap">
-      <div class="section-head" style="max-width: 68ch;">
-        <p class="eyebrow">About</p>
-        <h2>Why this exists</h2>
-        <p>Most "software raises prices" coverage happens after the fact, if it happens at all — a Reddit thread, a scattered blog post, easy to miss. QuietHike exists to catch the change while it's current, verify it properly, and give it a permanent, plain-English record. A companion to <a href="https://usestackscope.com" style="color: var(--accent);">StackScope</a>, which does the same verification work for full category comparisons rather than single price changes.</p>
-        <p style="margin-top: 16px;">Spotted a price change we haven't caught, or found an error in something we logged? <a href="mailto:hello@quiethike.com" style="color: var(--accent);">hello@quiethike.com</a></p>
+        <div class="poll-card" id="frequency-poll">
+          <h4>How often should we drop?</h4>
+          <p class="poll-sub">Pick one — helps us plan the upload schedule.</p>
+          <div class="poll-options">
+            <button class="poll-option" data-value="Daily">Daily</button>
+            <button class="poll-option" data-value="3x a week">3x a week</button>
+            <button class="poll-option" data-value="Once a week">Once a week</button>
+            <button class="poll-option" data-value="Biweekly">Biweekly</button>
+          </div>
+          <p class="poll-success">✓ Thanks — vote logged.</p>
+          <form name="patchdesk-frequency-poll" method="POST" data-netlify="true" class="poll-form" style="display:none;">
+            <input type="hidden" name="form-name" value="patchdesk-frequency-poll">
+            <input type="hidden" name="choice">
+          </form>
+        </div>
       </div>
     </div>
   </section>
@@ -201,16 +211,40 @@
 
 <footer>
   <div class="wrap foot-grid">
-    <p class="foot-disclosure">QuietHike logs publicly verifiable pricing changes. We are not affiliated with, and do not receive payment from, any vendor mentioned. Confirm current pricing directly with each vendor before purchasing.</p>
+    <p class="foot-disclosure">The Patch Desk publishes independent game reviews. No score is bought or sponsored — if that ever changes for a specific piece of coverage, it'll be disclosed on the article itself.</p>
     <nav class="foot-links">
-      <a href="#log">This week</a>
-      <a href="#methodology">Methodology</a>
-      <a href="#about">About</a>
-      <a href="terms.html">Terms</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#patch-watch">Patch Watch</a>
+      <a href="patchdesk-all.html">Everything</a>
+      <a href="patchdesk-reveals.html">Reveals</a>      <a href="patchdesk-about.html">About</a>
+      <a href="patchdesk-contact.html">Contact</a>
+      <a href="patchdesk-terms.html">Terms</a>
+      <a href="patchdesk-privacy.html">Privacy</a>
+      <a href="feed.xml">RSS</a>
+      <a href="https://x.com/thepatchdesk" class="social-link" target="_blank" rel="noopener" aria-label="The Patch Desk on X">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+      <a href="https://discord.gg/4xp6kFaag6" class="social-link" target="_blank" rel="noopener" aria-label="The Patch Desk on Discord">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M18.5 6.6c-1.2-.6-2.5-1-3.9-1.2l-.2.4c1.3.3 2.5.8 3.5 1.5-2.2-1-4.6-1.5-7-1.5s-4.8.5-7 1.5c1-.7 2.2-1.2 3.5-1.5l-.2-.4c-1.4.2-2.7.6-3.9 1.2C1.5 9.7 1 13 1.3 16.3c1.6 1.2 3.2 1.9 4.7 2.4l.6-1c-.8-.3-1.5-.6-2.2-1.1.2-.1.4-.3.5-.4 2 1 4.3 1.5 6.6 1.5s4.6-.5 6.6-1.5c.2.1.4.3.5.4-.7.5-1.4.8-2.2 1.1l.6 1c1.5-.5 3.1-1.2 4.7-2.4.4-3.7-.4-7-2.6-9.7zM8.7 14.4c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6zm6.1 0c-.8 0-1.4-.7-1.4-1.6s.6-1.6 1.4-1.6 1.4.7 1.4 1.6-.6 1.6-1.4 1.6z" fill="currentColor"/>
+        </svg>
+      </a>
     </nav>
   </div>
 </footer>
 
+<script src="data-reviews.js"></script>
+<script src="data-patchwatch.js"></script>
+<script src="data-reveals.js"></script>
+<script src="patchdesk-cards.js"></script>
+<script src="patchdesk-app.js"></script>
+<script>
+  renderCards("reviews", "#reviews-preview", 3);
+  renderCards("patchwatch", "#patchwatch-preview", 3);
+  renderCards("reveals", "#reveals-preview", 3);
+  renderNewestShowcase("#newest-showcase");
+</script>
 </body>
 </html>
