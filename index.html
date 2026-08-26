@@ -48,7 +48,9 @@
       <a href="#reviews">Reviews</a>
       <a href="#patch-watch">Patch Watch</a>
       <a href="patchdesk-all.html">Everything</a>
-      <a href="patchdesk-reveals.html">Reveals</a>      <a href="#how-we-review">How We Review</a>
+      <a href="patchdesk-reveals.html">Reveals</a>
+      <a href="patchdesk-calendar.html">Calendar</a>
+      <a href="#how-we-review">How We Review</a>
       <a href="patchdesk-about.html">About</a>
     </nav>
   </div>
@@ -144,6 +146,19 @@
       <div class="review-grid" id="reveals-preview"></div>
     </div>
   </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" style="display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap;">
+        <div>
+          <p class="eyebrow">Confirmed via official sources</p>
+          <h2>Coming Up</h2>
+          <p>Real release dates only — no rumors, no "probably Q3."</p>
+        </div>
+        <a href="patchdesk-calendar.html" class="btn btn-ghost" style="white-space:nowrap;">View full calendar</a>
+      </div>
+      <div id="release-preview"></div>
+    </div>
+  </section>
   <section class="section" id="how-we-review">
     <div class="wrap">
       <div class="section-head">
@@ -219,7 +234,9 @@
       <a href="#reviews">Reviews</a>
       <a href="#patch-watch">Patch Watch</a>
       <a href="patchdesk-all.html">Everything</a>
-      <a href="patchdesk-reveals.html">Reveals</a>      <a href="patchdesk-about.html">About</a>
+      <a href="patchdesk-reveals.html">Reveals</a>
+      <a href="patchdesk-calendar.html">Calendar</a>
+      <a href="#how-we-review">How We Review</a>
       <a href="patchdesk-contact.html">Contact</a>
       <a href="patchdesk-terms.html">Terms</a>
       <a href="patchdesk-privacy.html">Privacy</a>
@@ -241,13 +258,16 @@
 <script src="data-reviews.js"></script>
 <script src="data-patchwatch.js"></script>
 <script src="data-reveals.js"></script>
+<script src="data-releases.js"></script>
 <script src="patchdesk-cards.js"></script>
+<script src="patchdesk-calendar.js"></script>
 <script src="patchdesk-app.js"></script>
 <script>
   renderCards("reviews", "#reviews-preview", 3);
   renderCards("patchwatch", "#patchwatch-preview", 3);
   renderCards("reveals", "#reveals-preview", 3);
   renderNewestShowcase("#newest-showcase");
+  renderReleasePreview("#release-preview", 4);
 </script>
 </body>
 </html>

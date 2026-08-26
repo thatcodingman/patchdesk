@@ -560,3 +560,34 @@ footer { border-top: 1px solid var(--line); padding: 40px 0 48px; margin-top: 20
   .main-nav { gap: 10px 16px; flex-wrap: wrap; width: 100%; }
   .main-nav a { font-size: 0.72rem; }
 }
+/* ---------------- release calendar ---------------- */
+.calendar-month-heading { font-family: var(--font-display); font-weight: 400; font-size: 1.5rem; margin: 44px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.calendar-month-heading:first-child { margin-top: 0; }
+.release-list { display: flex; flex-direction: column; gap: 14px; }
+.release-card {
+  background: var(--surface); border: 1px solid var(--line-strong); border-left: 3px solid var(--brand);
+  border-radius: var(--radius); padding: 20px 22px; display: flex; gap: 20px; align-items: flex-start;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.release-card:hover { transform: translateY(-2px); border-color: var(--brand); }
+.release-date { font-family: var(--font-display); text-align: center; flex-shrink: 0; width: 60px; }
+.release-date .day { font-size: 2rem; line-height: 1; color: var(--text); }
+.release-date .month { font-family: var(--font-pixel); font-size: 0.55rem; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 4px; display: block; }
+.release-body { flex: 1; min-width: 0; }
+.release-title { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin: 0 0 4px; }
+.release-confidence { display: inline-flex; align-items: center; gap: 5px; font-size: 0.7rem; font-weight: 700; padding: 3px 9px; border-radius: 20px; margin-bottom: 8px; }
+.release-confidence.confirmed { color: var(--good); background: rgba(53,224,160,0.12); }
+.release-confidence.estimated { color: var(--mid); background: rgba(242,177,52,0.12); }
+.release-meta { font-size: 0.8rem; color: var(--text-soft); margin: 4px 0; }
+.release-platforms { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.platform-tag { font-family: var(--font-body); font-weight: 600; font-size: 0.72rem; color: var(--text-soft); background: var(--surface-raised); border: 1px solid var(--line-strong); border-radius: 4px; padding: 3px 8px; }
+.release-blurb { font-size: 0.9rem; color: var(--text); margin: 0 0 10px; }
+.release-source { font-size: 0.78rem; }
+.release-source a { color: var(--brand); text-decoration: none; }
+.release-source a:hover { text-decoration: underline; }
+.release-verified-note { color: var(--text-soft); }
+.release-delay-flag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; color: var(--bad); background: rgba(239,74,99,0.1); border-radius: 20px; padding: 3px 9px; margin-top: 8px; }
+@media (max-width: 560px) {
+  .release-card { flex-direction: column; }
+  .release-date { flex-direction: row; display: flex; align-items: baseline; gap: 8px; width: auto; }
+}
