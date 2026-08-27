@@ -54,9 +54,22 @@ const PATCH_WATCH = [
     blurb: "M11 gets hit hard, AKM gets a small buff, and melee finally chases better — but the Spear stamina rework is still a sore spot.",
     delta: "up",
     deltaLabel: "Correction patch, not a full fix",
-    sentiment: 66,
-    requested: "yes",
+    sentiment: null,
+    requested: "mixed",
     patchSize: "TBD — not verified, don't publish a number without a platform-specific source"
+  },
+  {
+    slug: "sea-of-thieves-382",
+    title: "Sea of Thieves — v3.8.2 Custom Seas & Faction Battle Repair",
+    meta: "Checked in · 1 day after launch",
+    live: true,
+    date: "2026-08-21",
+    blurb: "Faction Battle winners finally get their ship repaired for free, but a sprawling Custom Seas expansion has some players wondering if Rare's attention is in the right place.",
+    delta: "flat",
+    deltaLabel: "Meaningful systems patch, light on content",
+    sentiment: null,
+    requested: "mixed",
+    patchSize: "TBD — not verified for 3.8.2"
   },
   {
     slug: "format-preview-3",
@@ -70,6 +83,19 @@ const PATCH_WATCH = [
     sentiment: 32,
     requested: "no",
     patchSize: "1.8 GB (all platforms)"
+  },
+  {
+    slug: "dbd-chorus-of-sin",
+    title: "Dead by Daylight — Chorus of Sin",
+    meta: "Checked in 1 day after launch",
+    live: true,
+    date: "2026-08-26",
+    blurb: "MMR gets fairer over time, but The Judgment's Divine Light feels weak while Exile picks up the slack.",
+    delta: "flat",
+    deltaLabel: "Mixed — MMR improves, The Judgment falls short",
+    sentiment: null,
+    requested: "mixed",
+    patchSize: "TBD — not verified"
   }
 ];
 
