@@ -84,6 +84,20 @@ const PATCH_WATCH = [
     requested: "no",
     patchSize: "1.8 GB (all platforms)"
   }
+  {
+    slug: "dbd-chorus-of-sin",
+    title: "Dead by Daylight — Chorus of Sin",
+    meta: "Checked in 1 day after launch",
+    live: true,
+    date: "2026-08-26",
+    blurb: "MMR gets fairer over time, but The Judgment's Divine Light feels weak while Exile picks up the slack.",
+    delta: "flat",
+    deltaLabel: "Mixed — MMR improves, The Judgment falls short",
+    sentiment: null, // sample too small (2 respondents) — no numeric score, same call as Sea of Thieves
+    requested: "mixed",
+    patchSize: "TBD — not verified"
+  }
 ];
+
 
 if (typeof module !== "undefined") module.exports = PATCH_WATCH;
