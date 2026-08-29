@@ -96,6 +96,19 @@ const PATCH_WATCH = [
     sentiment: null,
     requested: "mixed",
     patchSize: "TBD — not verified"
+  },
+  {
+    slug: "nba-2k27-ghost-patch",
+    title: "NBA 2K27 May Have Ghost-Patched — But 2K Isn't Saying",
+    meta: "Checked in 2 days after Early Access",
+    live: true,
+    date: "2026-08-28",
+    blurb: "One player reports a slower grind and inconsistent shooting since Early Access — but 2K hasn't confirmed any changes exist.",
+    delta: "flat",
+    deltaLabel: "Unconfirmed — worth watching",
+    sentiment: null,
+    requested: "mixed",
+    patchSize: "No confirmed patch — undocumented, player-observed only"
   }
 ];
 
