@@ -109,6 +109,19 @@ const PATCH_WATCH = [
     sentiment: null,
     requested: "no",
     patchSize: "No confirmed patch — undocumented, player-observed only"
+  },
+  {
+    slug: "manor-lords-major-update-8",
+    title: "Manor Lords Major Update 8: Faster Building, Hungrier Cows",
+    meta: "Checked in 2 days after launch",
+    live: true,
+    date: "2026-08-29",
+    blurb: "Construction Yard delivers real speed even if it feels closer to 40% than the official 50%, but Hungry Animals can wipe out a herd fast on bad fertility land.",
+    delta: "flat",
+    deltaLabel: "Mixed — big QoL win, real new failure state",
+    sentiment: null,
+    requested: "no",
+    patchSize: "TBD — not verified"
   }
 ];
 
