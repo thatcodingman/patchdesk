@@ -107,7 +107,7 @@ const PATCH_WATCH = [
     delta: "flat",
     deltaLabel: "Unconfirmed — worth watching",
     sentiment: null,
-    requested: "mixed",
+    requested: "no",
     patchSize: "No confirmed patch — undocumented, player-observed only"
   }
 ];
