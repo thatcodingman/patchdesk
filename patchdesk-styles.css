@@ -306,8 +306,7 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 }
 .requested-badge.yes { color: var(--good); background: rgba(53,224,160,0.12); }
 .requested-badge.mixed { color: var(--mid); background: rgba(242,177,52,0.12); }
-.requested-badge.no { color: var(--text-soft); background: var(--surface-raised); border: 1px solid var(--line-strong); }
-
+.requested-badge.no { color: var(--bad); background: rgba(239,74,99,0.1); border: 1px solid var(--bad); }
 .delta-big { font-family: var(--font-display); font-size: 1.8rem; line-height: 1; }
 .delta-big.up { color: var(--good); }
 .delta-big.down { color: var(--bad); }
