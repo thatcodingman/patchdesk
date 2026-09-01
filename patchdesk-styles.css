@@ -139,7 +139,8 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
 
 /* ---------------- hero ---------------- */
-.hero { padding: 68px 0 32px; position: relative; overflow: hidden; }.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
+.hero { padding: 68px 0 32px; position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
 .eyebrow {
   font-family: var(--font-pixel); font-size: 0.6rem; color: var(--good);
   text-transform: uppercase; letter-spacing: 0.04em;
@@ -249,6 +250,18 @@ h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.7rem
 .delta.up { color: var(--good); background: rgba(53,224,160,0.12); }
 .delta.down { color: var(--bad); background: rgba(239,74,99,0.12); }
 .delta.flat { color: var(--mid); background: rgba(242,177,52,0.12); }
+
+/* ---------------- freshness signals + editorial hooks (cards) ---------------- */
+.badge-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.freshness-tag { font-family: var(--font-pixel); font-size: 0.58rem; color: var(--text-soft); letter-spacing: 0.03em; }
+.freshness-tag.fresh { color: var(--good); animation: pulse-dot 2s ease-in-out infinite; }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.card-hook { font-size: 0.92rem; font-weight: 600; margin: 0 0 8px; }
+.card-hook.up { color: var(--good); }
+.card-hook.down { color: var(--bad); }
+.card-hook.flat { color: var(--mid); }
+.card-cover { width: calc(100% + 40px); height: 100px; object-fit: cover; margin: -20px -20px 16px; display: block; }
+@media (prefers-reduced-motion: reduce) { .freshness-tag.fresh { animation: none; } }
 
 /* ---------------- article page ---------------- */
 .breadcrumb {
