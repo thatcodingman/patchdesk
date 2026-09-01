@@ -135,11 +135,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 .btn-primary { background: var(--brand); color: #0d0f14; }
 .btn-primary:hover { background: #869eff; }
 .btn-ghost { background: var(--surface-raised); color: var(--text); border: 1px solid var(--line-strong); }
+.btn-ghost.emphasis { border-color: var(--brand); color: var(--brand); font-weight: 600; }
 .btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
 
 /* ---------------- hero ---------------- */
-.hero { padding: 68px 0 60px; position: relative; overflow: hidden; }
-.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
+.hero { padding: 68px 0 32px; position: relative; overflow: hidden; }.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 52px; align-items: center; }
 .eyebrow {
   font-family: var(--font-pixel); font-size: 0.6rem; color: var(--good);
   text-transform: uppercase; letter-spacing: 0.04em;
