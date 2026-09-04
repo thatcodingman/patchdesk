@@ -197,6 +197,7 @@ h1 .accent { color: var(--brand); }
 .meter-fill.good { background: linear-gradient(90deg, var(--good), #59f0bb); }
 .meter-fill.mid { background: linear-gradient(90deg, var(--mid), #ffcf6b); }
 .meter-fill.bad { background: linear-gradient(90deg, var(--bad), #ff7d90); }
+.meter-fill.split { background: linear-gradient(90deg, var(--mid), var(--bad)); }
 
 /* ---------------- sections ---------------- */
 .section { padding: 64px 0; }

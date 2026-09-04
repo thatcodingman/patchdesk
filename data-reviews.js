@@ -15,10 +15,10 @@ const REVIEWS = [
     meta: "PS5, Xbox Series X|S, PC, Switch 2 · Reviewed September 2026",
     live: true,
     date: "2026-09-05",
-    score: 72,
+    score: 65,
     stats: [
-      { label: "Worth the price", value: 65, tone: "mid" },
-      { label: "vs. last year", value: 74, tone: "good" },
+      { label: "Worth the price", value: 50, tone: "split" },
+      { label: "vs. last year", value: 58, tone: "mid" },
       { label: "Performance", value: 42, tone: "bad" }
     ]
   },
