@@ -10,6 +10,19 @@
 
 const REVIEWS = [
   {
+    slug: "nba-2k27-review",
+    title: "NBA 2K27 Review: Is It Worth the $70?",
+    meta: "PS5, Xbox Series X|S, PC, Switch 2 · Reviewed September 2026",
+    live: true,
+    date: "2026-09-05",
+    score: 72,
+    stats: [
+      { label: "Worth the price", value: 65, tone: "mid" },
+      { label: "vs. last year", value: 74, tone: "good" },
+      { label: "Performance", value: 42, tone: "bad" }
+    ]
+  },
+  {
     slug: "format-preview-1",
     title: "Review Title Goes Here",
     meta: "Platform · Genre · Launch price",
